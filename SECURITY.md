@@ -15,7 +15,7 @@ As the project is in active development, security updates and critical stability
 Even in a single-player game, the integrity of your system and save data is important. If you discover a critical bug that causes system instability, data loss, or potential security risks, please follow these steps:
 
 ### How to Report
-1. **Private Reporting:** If you find a high-risk vulnerability, please do not open a public Issue. Instead, contact the maintainer directly through the contact methods listed on the [profile page](https://github.com).
+1. **Private Reporting:** If you find a high-risk vulnerability, please do not open a public Issue. Instead, contact the maintainer directly through the contact methods listed on the [profile page](https://github.com/KykemanovDaniil).
 2. **Public Issues:** For general bugs that do not pose a security risk (e.g., gameplay glitches), feel free to open a [GitHub Issue](https://github.com/outreach/issues).
 
 ### What to Include
