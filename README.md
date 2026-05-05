@@ -30,11 +30,11 @@ Originally conceived as a high school academic project, **Outreach** has evolved
 
 ## Credits
 * **Daniil Kykemanov:** Project Lead, Lead Programmer, Composer, Sound Design.
-* **Lyosha Vburyan:** Lead Sprite Artist.
+* **Alyosha mayonnaise 103:** Lead Sprite Artist.
 * **Daniil Kykemanov:** Additional Art & Sprites.
 
 ### Special Thanks
-* **Lyosha Vburyan** — For significant contributions to the project's visual direction and development.
+* **Alyosha mayonnaise 103** — For significant contributions to the project's visual direction and development.
 
 ## Play the game
 * [Play on Itch.io](https://kykemanov-daniil.itch.io/outreach)
