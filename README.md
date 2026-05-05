@@ -1,6 +1,38 @@
-# outreach
-A sandbox game built on the Godot platform with a focus on performance.
-#about
-The game was originally created for a year-long project at school, but later it began to seem like a promising project to me, which is why I began active development.
-Outreach had many different iterations before, so to speak. At first it was similar to Terraria, later, when I found the Voxel Tools plugin, the game became a sandbox in a liminal space, inspired by Voima, Minecraft and Backrooms Later the game acquired its usual appearance
-#
+# Outreach
+
+A performance-oriented voxel sandbox developed with **Godot Engine**.
+
+## Overview
+Originally conceived as a high school academic project, **Outreach** has evolved into a full-scale sandbox exploration game. The project underwent three major architectural iterations:
+
+1. **Origin:** A 2D side-scroller inspired by *Terraria*.
+2. **Transition:** A 3D liminal space environment after the integration of the *Voxel Tools* plugin (inspired by *Voima* and *The Backrooms*).
+3. **Current State:** A unique voxel-based sandbox that has moved beyond its initial inspirations to establish its own visual identity and mechanics.
+
+## Technical Stack
+* **Engine:** Godot 4.6 (Core target)
+* **Voxel Logic:** `Voxel Tools` C++ module/extension.
+* **Performance:** The project is currently in an active optimization phase. While not yet fully optimized, the core architecture is designed with a focus on achieving high performance in large-scale voxel environments.
+* **AI Integration:** This project utilizes **AI-assisted development**. Large language models (LLMs) were employed for code optimization, algorithmic restructuring, and boilerplate generation to ensure high development velocity and structural efficiency.
+
+## Getting Started
+### Prerequisites
+* **Godot Engine:** 4.1+ (Stable **4.6** recommended).
+* **Plugins:** `Voxel Tools` (Ensure the version matches your Godot build).
+* **Templates:** Standard Godot Export Templates for target platforms.
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/KykemanovDaniil/outreach
+   ```
+2. Install the required `Voxel Tools` extension in the `bin/` or `addons/` directory.
+3. Import the project into Godot 4.6.
+
+## Credits
+* **Daniil Kykemanov:** Project Lead, Lead Programmer, Composer, Sound Design.
+* **Lyosha Vburyan:** Lead Sprite Artist.
+* **Daniil Kykemanov:** Additional Art & Sprites.
+
+### Special Thanks
+* **Lyosha Vburyan** — For significant contributions to the project's visual direction and development.
