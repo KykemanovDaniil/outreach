@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PageData" format=3 uid="uid://c8tdekwqcc5ae"]
+
+[ext_resource type="Script" uid="uid://bvymcx0bbfpbj" path="res://scenes/menu/tutorial/page_class/page.gd" id="2_htfdn"]
+
+[resource]
+script = ExtResource("2_htfdn")
+PAGE_NAME = "Movement & Actions"
+PAGE_DESCRIPTION = "Controls:
+WASD to move, Space to go up,
+Shift to go down.
+LMB to break blocks, RMB to place them."
+metadata/_custom_type_script = "uid://bvymcx0bbfpbj"

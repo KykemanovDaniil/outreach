@@ -1,0 +1,6 @@
+[gd_resource type="VoxelGeneratorFlat" format=3 uid="uid://d3mb13ywuwxry"]
+
+[resource]
+channel = 0
+height = 60.0
+voxel_type = 9

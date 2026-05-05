@@ -1,0 +1,344 @@
+[gd_scene format=3 uid="uid://cbsk8qw1tnxly"]
+
+[ext_resource type="Script" uid="uid://ba0ja1uv6xweq" path="res://scenes/gui/options/options.gd" id="1_dmt3d"]
+[ext_resource type="StyleBox" uid="uid://dgdutqnxjk17f" path="res://assets/common/materials/line.res" id="3_fftui"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fftui"]
+
+[sub_resource type="Theme" id="Theme_dmt3d"]
+
+[node name="options" type="PanelContainer" unique_id=1548751189]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fftui")
+script = ExtResource("1_dmt3d")
+
+[node name="PanelContainer" type="Panel" parent="." unique_id=1671280146]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1563442871]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer" unique_id=1473272300]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer" unique_id=701510345]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="graphics" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1289634223]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics" unique_id=67282984]
+modulate = Color(1, 0.95128316, 0.74073267, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics/PanelContainer" unique_id=1903799676]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="page_name" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics/PanelContainer/MarginContainer" unique_id=26449641]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "GRAPHICS"
+uppercase = true
+
+[node name="glow_button" type="CheckButton" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics" unique_id=2031605093]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "glow"
+
+[node name="sky_button" type="CheckButton" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics" unique_id=424198247]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+button_pressed = true
+text = "sky"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics" unique_id=1274750024]
+visible = false
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics/HBoxContainer2" unique_id=1820075661]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label5" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics/HBoxContainer2/PanelContainer" unique_id=101802654]
+layout_mode = 2
+text = "graphic level"
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics/HBoxContainer2" unique_id=826654745]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics/HBoxContainer2" unique_id=1312378698]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 1
+item_count = 3
+popup/item_0/text = "low"
+popup/item_0/id = 0
+popup/item_1/text = "normal"
+popup/item_1/id = 1
+popup/item_2/text = "high"
+popup/item_2/id = 2
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1552082494]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = ExtResource("3_fftui")
+
+[node name="world" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=637687341]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world" unique_id=1616061336]
+modulate = Color(1, 0.9529412, 0.7411765, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/PanelContainer2" unique_id=122747827]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="page_name" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/PanelContainer2/MarginContainer" unique_id=1129449440]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "world"
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world" unique_id=1215757790]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer" unique_id=148051298]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer/PanelContainer" unique_id=1839083539]
+layout_mode = 2
+text = "render_distance"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer" unique_id=2136043173]
+layout_mode = 2
+
+[node name="render_distance" type="SpinBox" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer" unique_id=1029320533]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_dmt3d")
+min_value = 2.0
+max_value = 128.0
+value = 2.0
+alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world" unique_id=1701345066]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer3" unique_id=2123696107]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer3/PanelContainer" unique_id=251256874]
+layout_mode = 2
+text = "fov"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer3" unique_id=228746812]
+layout_mode = 2
+
+[node name="fov" type="SpinBox" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer3" unique_id=641645653]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_dmt3d")
+min_value = 1.0
+max_value = 145.0
+value = 75.0
+alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=736256074]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = ExtResource("3_fftui")
+
+[node name="audio" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1993883095]
+layout_mode = 2
+
+[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio" unique_id=2079333200]
+modulate = Color(1, 0.9529412, 0.7411765, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio/PanelContainer4" unique_id=462207101]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="page_name" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio/PanelContainer4/MarginContainer" unique_id=502692719]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "audio"
+uppercase = true
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio" unique_id=942558059]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio/HBoxContainer4" unique_id=831849795]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio/HBoxContainer4/PanelContainer" unique_id=635140401]
+layout_mode = 2
+text = "music volume"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio/HBoxContainer4" unique_id=257121722]
+layout_mode = 2
+
+[node name="music_volume" type="SpinBox" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio/HBoxContainer4" unique_id=1356199084]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_dmt3d")
+step = 0.1
+alignment = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio" unique_id=451191508]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio/HBoxContainer5" unique_id=1736028607]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio/HBoxContainer5/PanelContainer" unique_id=694956821]
+layout_mode = 2
+text = "sfx volume"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio/HBoxContainer5" unique_id=542741484]
+layout_mode = 2
+
+[node name="sfx_volume" type="SpinBox" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio/HBoxContainer5" unique_id=1957864553]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_dmt3d")
+step = 0.1
+alignment = 1
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1697251500]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = ExtResource("3_fftui")
+
+[node name="other" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=296033688]
+layout_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/other" unique_id=1728887887]
+modulate = Color(1, 0.9529412, 0.7411765, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/other/PanelContainer3" unique_id=874467117]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="page_name" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/other/PanelContainer3/MarginContainer" unique_id=1928032752]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "other"
+uppercase = true
+
+[node name="v_sync_button" type="CheckButton" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/other" unique_id=1093861944]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+button_pressed = true
+text = "v_sync"
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer" unique_id=661057666]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_top = -50
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer2" unique_id=1440377904]
+modulate = Color(0.99999994, 0.8906916, 0.40941587, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer2/PanelContainer2" unique_id=500881631]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer2/PanelContainer2/MarginContainer" unique_id=1489618762]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics/glow_button" to="." method="_on_button_pressed" binds= ["glow"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics/sky_button" to="." method="_on_button_pressed" binds= ["sky"]]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer/render_distance" to="." method="_on_render_distance_value_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer3/fov" to="." method="_on_fov_value_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio/HBoxContainer4/music_volume" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio/HBoxContainer5/sfx_volume" to="." method="_on_sfx_value_changed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/other/v_sync_button" to="." method="_on_button_pressed" binds= ["v_sync"]]

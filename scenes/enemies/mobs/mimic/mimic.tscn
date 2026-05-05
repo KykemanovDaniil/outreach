@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://drbxougo3lbav"]
+
+[ext_resource type="Script" uid="uid://dpnxkjmw8o7hb" path="res://scenes/enemies/mobs/peacful_mob.gd" id="1_5rhne"]
+[ext_resource type="Material" uid="uid://w5eiw0gb4le1" path="res://assets/common/materials/block_material.res" id="2_tge2g"]
+[ext_resource type="ArrayMesh" uid="uid://c8dpkpe7g134v" path="res://assets/models/chest/chest.obj" id="3_1f22w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4d85"]
+size = Vector3(0.8763428, 0.8748779, 0.93847656)
+
+[node name="mimic" type="CharacterBody3D" unique_id=1583927402]
+collision_layer = 2
+script = ExtResource("1_5rhne")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=349764066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00030517578, -0.062561035, -0.030761719)
+shape = SubResource("BoxShape3D_g4d85")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=877930726]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5, -0.5, 0.5)
+material_override = ExtResource("2_tge2g")
+mesh = ExtResource("3_1f22w")

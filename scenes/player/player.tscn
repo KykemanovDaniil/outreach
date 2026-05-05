@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://kdeg6wmirrn0"]
+
+[ext_resource type="Script" uid="uid://dbtixdpj8tqp6" path="res://scenes/player/player.gd" id="1_wg42c"]
+[ext_resource type="PackedScene" uid="uid://beoh00kqb84gq" path="res://scenes/gui/inventory/inventory.tscn" id="2_ratu8"]
+[ext_resource type="PackedScene" uid="uid://cbsk8qw1tnxly" path="res://scenes/gui/options/options.tscn" id="3_xo733"]
+[ext_resource type="PackedScene" uid="uid://crobbghfu2pg2" path="res://scenes/gui/debug/debug.tscn" id="4_wg42c"]
+
+[node name="player" type="Camera3D" unique_id=1259636340 groups=["player"]]
+process_mode = 3
+far = 999999.0
+script = ExtResource("1_wg42c")
+inventory_scene = ExtResource("2_ratu8")
+options_scene = ExtResource("3_xo733")
+
+[node name="visual_viewer" type="VoxelViewer" parent="." unique_id=1383572093 groups=["visual_block"]]
+view_distance = 64
+requires_collisions = false
+unique_name_in_owner = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=316589609]
+layer = 50
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1301693954]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="debug" parent="CanvasLayer" unique_id=565262784 instance=ExtResource("4_wg42c")]
