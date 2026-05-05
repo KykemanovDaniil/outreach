@@ -37,5 +37,5 @@ Originally conceived as a high school academic project, **Outreach** has evolved
 * **Lyosha Vburyan** — For significant contributions to the project's visual direction and development.
 
 ## Play the game
-* [Play on Itch.io](https://kykemanov-daniil.itch.io/outreach))
-* [Play on Game Jolt](https://gamejolt.com/games/OutReach/1055108))
+* [Play on Itch.io](https://kykemanov-daniil.itch.io/outreach)
+* [Play on Game Jolt](https://gamejolt.com/games/OutReach/1055108)
