@@ -35,3 +35,8 @@ Originally conceived as a high school academic project, **Outreach** has evolved
 
 ### Special Thanks
 * **Lyosha Vburyan** — For significant contributions to the project's visual direction and development.
+
+# Play the game
+### Play the Game
+* [Play on Itch.io](https://kykemanov-daniil.itch.io/outreach))
+* [Play on Game Jolt](https://gamejolt.com/games/OutReach/1055108))
