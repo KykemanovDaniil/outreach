@@ -1,5 +1,7 @@
 ![Gameplay Screenshot](assets/textures/outreach.png)
 
+
+
 A performance-oriented voxel sandbox developed with **Godot Engine**.
 
 ## Overview
