@@ -18,7 +18,7 @@ Originally conceived as a high school academic project, **Outreach** has evolved
 ## Getting Started
 ### Prerequisites
 * **Godot Engine:** 4.1+ (Stable **4.6** recommended).
-* **Plugins:** `Voxel Tools` (Ensure the version matches your Godot build).
+* **Plugins:** `Voxel Tools` ([official realise page](https://github.com/Zylann/godot_voxel/releases/tag/v1.6x)).
 * **Templates:** Standard Godot Export Templates for target platforms.
 
 ### Installation
@@ -26,7 +26,7 @@ Originally conceived as a high school academic project, **Outreach** has evolved
    ```bash
    git clone https://github.com/KykemanovDaniil/outreach
    ```
-2. Install the required `Voxel Tools` extension in the `bin/` or `addons/` directory.
+2. Install the required `Voxel Tools` extension in the `addons/` directory.
 3. Import the project into Godot 4.6.
 
 ## Credits
