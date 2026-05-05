@@ -1,7 +1,4 @@
 ![Gameplay Screenshot](assets/textures/outreach.png)
-
-
-
 A performance-oriented voxel sandbox developed with **Godot Engine**.
 
 ## Overview
@@ -19,7 +16,7 @@ Originally conceived as a high school academic project, **Outreach** has evolved
 
 ## Getting Started
 ### Prerequisites
-* **Godot Engine:** 4.1+ (Stable **4.6** recommended).
+* **Godot Engine:** 4.5+ (Stable **4.6** recommended).
 * **Plugins:** `Voxel Tools` ([official realise page](https://github.com/Zylann/godot_voxel/releases/tag/v1.6x)).
 * **Templates:** Standard Godot Export Templates for target platforms.
 
