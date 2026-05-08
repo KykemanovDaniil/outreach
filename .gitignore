@@ -1,9 +1,17 @@
-.addons/
+# trash
 .godot/
 .import/
+
+# conf export
 export.cfg
 export_presets.cfg
-*.pck
+
+# build
 *.exe
-.godot/
+*.pck
+*.zip
+*.android
+*.ipa
+
+# other
 /android/
