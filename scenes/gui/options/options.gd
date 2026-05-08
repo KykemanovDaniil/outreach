@@ -65,9 +65,8 @@ func _on_music_value_changed(value: float) -> void:
 	GlobalValues.music_volume = value / 100.0
 	
 	# 2. Пинкаем AudioManager, чтобы он обновил громкость прямо сейчас
-	if has_node("/root/AudioManager"):
-		get_node("/root/AudioManager").sync_music_volume()
-		
+	SoundManager.sync_music_volume()
+	
 	SaveSystem.set_val("Audio", "music_volume", GlobalValues.music_volume)
 
 func _on_sfx_value_changed(value: float) -> void:

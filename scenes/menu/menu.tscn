@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dupck2ruambx6"]
 
 [ext_resource type="Script" uid="uid://uk648nryu4k4" path="res://scenes/menu/menu.gd" id="1_037ec"]
+[ext_resource type="Texture2D" uid="uid://75euk8bdqo6v" path="res://assets/textures/outreach_outline.png" id="2_3y2rt"]
 [ext_resource type="Theme" uid="uid://cynbq5s6oqfjd" path="res://assets/common/theme/theme.tres" id="3_r8yej"]
 [ext_resource type="PackedScene" uid="uid://cbsk8qw1tnxly" path="res://scenes/gui/options/options.tscn" id="5_y1o0p"]
 [ext_resource type="Script" uid="uid://bcsn77uqp3urs" path="res://scenes/menu/tutorial/tutorial.gd" id="6_qo0fc"]
@@ -31,6 +32,7 @@ script = ExtResource("1_037ec")
 
 [node name="world_create" type="Control" parent="Control" unique_id=1170372088]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -279,7 +281,6 @@ text = "BACK"
 
 [node name="menu" type="Control" parent="Control" unique_id=140237507]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -290,15 +291,9 @@ mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/menu" unique_id=2054763584]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -210.0
-offset_top = -147.5
-offset_right = 210.0
-offset_bottom = 147.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
@@ -308,19 +303,36 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Control/menu/MarginContainer" unique_id=1452719232]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/menu/MarginContainer" unique_id=449234948]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 20
 
-[node name="TextureRect" type="TextureRect" parent="Control/menu/MarginContainer/VBoxContainer2" unique_id=1822952021]
-custom_minimum_size = Vector2(400, 0)
+[node name="Control" type="Control" parent="Control/menu/MarginContainer/VBoxContainer2" unique_id=13622860]
 layout_mode = 2
-expand_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="Control/menu/MarginContainer/VBoxContainer2/Control" unique_id=425416216]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1950.0
+offset_top = -344.0
+offset_right = 1950.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.12, 0.12)
+pivot_offset = Vector2(1950, 279.5)
+size_flags_horizontal = 4
+texture = ExtResource("2_3y2rt")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/menu/MarginContainer/VBoxContainer2" unique_id=1503340520]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 10
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1209195237]
@@ -658,7 +670,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme = SubResource("Theme_t0a87")
-text = "OUTREACH 1.2.0"
+text = "OUTREACH 1.2.1"
 script = SubResource("GDScript_xg200")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2093612364]

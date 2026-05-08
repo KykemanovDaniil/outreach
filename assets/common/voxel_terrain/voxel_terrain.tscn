@@ -11,6 +11,7 @@ generate_collisions = false
 collision_layer = 0
 collision_mask = 0
 run_stream_in_editor = false
+mesh_block_size = 32
 mesher = ExtResource("2_hx0pk")
 format = SubResource("VoxelFormat_elbpt")
 cast_shadow = 0

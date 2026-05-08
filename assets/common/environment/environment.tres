@@ -1,12 +1,13 @@
 [gd_resource type="Environment" format=3 uid="uid://kv325ybwe5j6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3qncr"]
-sky_top_color = Color(0.4946115, 0.8002935, 0.97907025, 1)
+sky_top_color = Color(0.3884575, 0.7576282, 0.9659464, 1)
 sky_horizon_color = Color(0.8392157, 0.9411765, 0.9882353, 1)
 sky_curve = 0.15000024
 ground_bottom_color = Color(1, 1, 1, 1)
 ground_horizon_color = Color(0.8392157, 0.9411765, 0.9882353, 1)
 ground_curve = 5.1200066
+use_debanding = false
 
 [sub_resource type="Sky" id="Sky_exl83"]
 sky_material = SubResource("ProceduralSkyMaterial_3qncr")
