@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ban4cxtosyr1k"]
 
-[ext_resource type="Material" uid="uid://pbf5ieaxchai" path="res://assets/common/materials/particle.tres" id="1_7eglp"]
+[ext_resource type="Material" uid="uid://pbf5ieaxchai" path="res://assets/common/materials/particle/particle.tres" id="1_7eglp"]
 [ext_resource type="Script" uid="uid://bob0e1t6il3sp" path="res://assets/vfx/particles/particles.gd" id="1_si6jx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7eglp"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://drbxougo3lbav"]
 
 [ext_resource type="Script" uid="uid://dpnxkjmw8o7hb" path="res://scenes/enemies/mobs/peacful_mob.gd" id="1_5rhne"]
-[ext_resource type="Material" uid="uid://w5eiw0gb4le1" path="res://assets/common/materials/block_material.res" id="2_tge2g"]
+[ext_resource type="Material" uid="uid://w5eiw0gb4le1" path="res://assets/common/materials/blocks/cull/block_material.res" id="2_tge2g"]
 [ext_resource type="ArrayMesh" uid="uid://c8dpkpe7g134v" path="res://assets/models/chest/chest.obj" id="3_1f22w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4d85"]

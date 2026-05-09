@@ -3,14 +3,33 @@
 [ext_resource type="Script" uid="uid://c6dlc3jvdmw2e" path="res://assets/common/environment/sky/sky.gd" id="1_cfafk"]
 [ext_resource type="Material" uid="uid://b0653msc61pmn" path="res://assets/common/environment/sky/sky.tres" id="1_e3ckr"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_cfafk"]
+[sub_resource type="Curve" id="Curve_euvry"]
+_data = [Vector2(1e-05, 0), 0.0, 0.0, 0, 0, Vector2(0.56617653, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_08668"]
+curve = SubResource("Curve_euvry")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m136c"]
+emission_shape = 3
+emission_box_extents = Vector3(2500, 10, 2500)
+gravity = Vector3(0, 0, 0)
+attractor_interaction_enabled = false
+scale_min = 0.0
+scale_max = 80.6
+scale_curve = SubResource("CurveTexture_08668")
+
+[sub_resource type="BoxMesh" id="BoxMesh_euvry"]
 material = ExtResource("1_e3ckr")
-size = Vector2(4000, 4000)
 
 [node name="sky" type="Node3D" unique_id=726800562]
 script = ExtResource("1_cfafk")
 
-[node name="sky_1" type="MeshInstance3D" parent="." unique_id=57606096]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 250, 0)
-mesh = SubResource("PlaneMesh_cfafk")
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1538351096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 350, 0)
+amount = 4082
+lifetime = 25.1
+randomness = 1.0
+visibility_aabb = AABB(-4999.5, -4999.5, -4999.5, 9999, 9999, 9999)
+process_material = SubResource("ParticleProcessMaterial_m136c")
+draw_pass_1 = SubResource("BoxMesh_euvry")

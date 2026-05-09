@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cbsk8qw1tnxly"]
 
 [ext_resource type="Script" uid="uid://ba0ja1uv6xweq" path="res://scenes/gui/options/options.gd" id="1_dmt3d"]
-[ext_resource type="StyleBox" uid="uid://dgdutqnxjk17f" path="res://assets/common/materials/line.res" id="3_fftui"]
+[ext_resource type="StyleBox" uid="uid://dgdutqnxjk17f" path="res://assets/common/theme/line.res" id="3_fftui"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fftui"]
 

@@ -1,7 +1,7 @@
 [gd_resource type="VoxelBlockyLibrary" format=3 uid="uid://g122wix0eknq"]
 
-[ext_resource type="Material" uid="uid://w5eiw0gb4le1" path="res://assets/common/materials/block_material.res" id="1_hnei8"]
-[ext_resource type="Material" uid="uid://dqoveyboax0jo" path="res://assets/common/materials/no_cull_block_material.res" id="2_r14d0"]
+[ext_resource type="Material" uid="uid://w5eiw0gb4le1" path="res://assets/common/materials/blocks/cull/block_material.res" id="1_hnei8"]
+[ext_resource type="Material" uid="uid://dqoveyboax0jo" path="res://assets/common/materials/blocks/no_cull/no_cull_block_material.res" id="2_r14d0"]
 [ext_resource type="ArrayMesh" uid="uid://bv1jxs0fs3xvd" path="res://assets/models/short_grass/short_grass.obj" id="3_s0fmo"]
 [ext_resource type="ArrayMesh" uid="uid://dnk4ny0dsq7fm" path="res://assets/models/butter_cup/butter_cup.obj" id="4_wkbp5"]
 [ext_resource type="ArrayMesh" uid="uid://dhtiwjay176rm" path="res://assets/models/bush/bush.obj" id="5_cn76v"]
