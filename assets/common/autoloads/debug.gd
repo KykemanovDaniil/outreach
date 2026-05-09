@@ -3,7 +3,7 @@ extends Node
 # Оставил твои оригинальные названия переменных и путей
 @onready var env_scene: PackedScene = preload("res://assets/common/environment/world_environment.tscn")
 @onready var dir_light_scene: PackedScene = preload("res://assets/common/environment/directoinal_light_3d/directional_light_3d.tscn")
-@onready var sky : PackedScene = preload("res://assets/common/environment/sky/sky.tscn")
+@onready var clouds : PackedScene = preload("res://assets/common/environment/clouds/clouds.tscn")
 @onready var post_processing : PackedScene = preload("res://assets/common/materials/post_processing/post_processing.tscn")
 
 func _ready() -> void:
@@ -22,14 +22,14 @@ func create() -> void:
 
 # Вспомогательная функция для очистки игровых нод в меню
 func _clear_world_nodes():
-	for n in ["sky", "WorldEnvironment", "dir_light", "PostProcessing"]:
+	for n in ["clouds", "WorldEnvironment", "dir_light", "PostProcessing"]:
 		var node = get_node_or_null(n)
 		if node: node.queue_free()
 
 func refresh_world() -> void:
 	_setup_render_distance()
 	_setup_environment()
-	_setup_sky()
+	_setup_clouds()
 	_setup_light()
 	_setup_post_processing()
 
@@ -58,23 +58,23 @@ func _setup_render_distance() -> void:
 		if is_instance_valid(viewer) and "view_distance" in viewer:
 			viewer.view_distance = GlobalValues.render_distance * 32
 
-func _setup_sky() -> void:
+func _setup_clouds() -> void:
 	var scene_path := ""
 	if get_tree().current_scene:
 		scene_path = get_tree().current_scene.scene_file_path
 	
 	if scene_path.ends_with("game.tscn"):
 	# Ищем существующий, чтобы не плодить 2000 объектов
-		var sky_instance = get_node_or_null("sky")
+		var clouds_instance = get_node_or_null("clouds")
 	
-		if not GlobalValues.sky:
-			if sky_instance: sky_instance.queue_free()
+		if not GlobalValues.clouds:
+			if clouds_instance: clouds_instance.queue_free()
 			return
 
-		if not sky_instance:
-			sky_instance = sky.instantiate()
-			sky_instance.name = "sky"
-			add_child(sky_instance)
+		if not clouds_instance:
+			clouds_instance = clouds.instantiate()
+			clouds_instance.name = "clouds"
+			add_child(clouds_instance)
 
 func _setup_environment() -> void:
 	var scene_path := ""

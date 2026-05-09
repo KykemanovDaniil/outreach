@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cbsk8qw1tnxly" path="res://scenes/gui/options/options.tscn" id="5_y1o0p"]
 [ext_resource type="Script" uid="uid://bcsn77uqp3urs" path="res://scenes/menu/tutorial/tutorial.gd" id="6_qo0fc"]
 [ext_resource type="PackedScene" uid="uid://bc3b8kr4mkoc4" path="res://assets/common/environment/world_environment.tscn" id="6_r8yej"]
-[ext_resource type="PackedScene" uid="uid://dv1gg4rx7mdbn" path="res://assets/common/environment/sky/sky.tscn" id="7_3y2rt"]
+[ext_resource type="PackedScene" uid="uid://dv1gg4rx7mdbn" path="res://assets/common/environment/clouds/clouds.tscn" id="7_3y2rt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k48pe"]
 

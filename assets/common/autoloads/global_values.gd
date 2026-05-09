@@ -12,7 +12,7 @@ var world_type : String = "basic"
 
 # Нагружаем значения из системы сохранений
 var render_distance : int = SaveSystem.get_val("Graphics", "render_distance", 4)
-var sky : bool = SaveSystem.get_val("Graphics", "sky", true)
+var clouds : bool = SaveSystem.get_val("Graphics", "clouds", true)
 var shadows : bool = false
 var fog : bool = true
 var glow : bool = SaveSystem.get_val("Graphics", "glow", false)

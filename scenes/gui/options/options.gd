@@ -2,7 +2,7 @@ extends PanelContainer
 
 # Используем Unique Names % для кнопок в сцене
 @onready var buttons = {
-	"sky": %sky_button,
+	"clouds": %clouds_button,
 	"glow": %glow_button,
 	"v_sync": %v_sync_button
 }
@@ -32,9 +32,9 @@ func sync_ui_with_values():
 
 func _on_button_pressed(action: String) -> void:
 	match action:
-		"sky":
-			GlobalValues.sky = !GlobalValues.sky
-			Debug._setup_sky()
+		"clouds":
+			GlobalValues.clouds = !GlobalValues.clouds
+			Debug._setup_clouds()
 		"glow":
 			GlobalValues.glow = !GlobalValues.glow
 			Debug._setup_environment()
