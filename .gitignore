@@ -1,6 +1,7 @@
 # trash
 .godot/
 .import/
+addons/
 
 # conf export
 export.cfg
