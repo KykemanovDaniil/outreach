@@ -3,17 +3,14 @@
 [ext_resource type="Script" uid="uid://uk648nryu4k4" path="res://scenes/menu/menu.gd" id="1_037ec"]
 [ext_resource type="Theme" uid="uid://cynbq5s6oqfjd" path="res://assets/common/theme/theme.tres" id="3_r8yej"]
 [ext_resource type="PackedScene" uid="uid://cbsk8qw1tnxly" path="res://scenes/gui/options/options.tscn" id="5_y1o0p"]
+[ext_resource type="Environment" uid="uid://kv325ybwe5j6" path="res://assets/common/environment/environment.tres" id="6_3y2rt"]
 [ext_resource type="Script" uid="uid://bcsn77uqp3urs" path="res://scenes/menu/tutorial/tutorial.gd" id="6_qo0fc"]
-[ext_resource type="PackedScene" uid="uid://bc3b8kr4mkoc4" path="res://assets/common/environment/world_environment.tscn" id="6_r8yej"]
-[ext_resource type="PackedScene" uid="uid://dv1gg4rx7mdbn" path="res://assets/common/environment/clouds/clouds.tscn" id="7_3y2rt"]
 [ext_resource type="AudioStream" uid="uid://dcprx5duwufdc" path="res://assets/audio/sfx/intro_logo.ogg" id="8_qo0fc"]
 [ext_resource type="Texture2D" uid="uid://bohqc1vkn5cx7" path="res://assets/textures/logos.png" id="8_t0a87"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3y2rt"]
 atlas = ExtResource("8_t0a87")
 region = Rect2(0, 0, 157, 22)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k48pe"]
 
 [sub_resource type="Theme" id="Theme_t0a87"]
 Label/constants/outline_size = 5
@@ -27,8 +24,10 @@ func _ready() -> void:
 	var version : Variant = ProjectSettings.get_setting(\"application/config/version\")
 	
 	# Устанавливаем текст (можно добавить префикс \"v\")
-	text = \"OUTREACH \" + str(version)
+	text = str(version)
 "
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k48pe"]
 
 [sub_resource type="Animation" id="Animation_3y2rt"]
 length = 0.001
@@ -404,15 +403,36 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -1950.0
-offset_top = -344.0
+offset_top = -351.0
 offset_right = 1950.0
-offset_bottom = 215.0
+offset_bottom = 208.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.12, 0.12)
 pivot_offset = Vector2(1950, 279.5)
 size_flags_horizontal = 4
 texture = SubResource("AtlasTexture_3y2rt")
+
+[node name="Label" type="Label" parent="Control/menu/MarginContainer/VBoxContainer2/Control/TextureRect" unique_id=566181364]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -492.5
+offset_top = 38.0
+offset_right = 492.5
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = SubResource("Theme_t0a87")
+theme_override_constants/outline_size = 83
+theme_override_font_sizes/font_size = 197
+text = "1.2.2"
+script = SubResource("GDScript_xg200")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/menu/MarginContainer/VBoxContainer2" unique_id=1503340520]
 layout_mode = 2
@@ -738,7 +758,13 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "BACK"
 
-[node name="version" type="MarginContainer" parent="Control" unique_id=398786352]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2093612364]
+transform = Transform3D(1, 0, 0, 0, 0.94815737, -0.31780115, 0, 0.31780115, 0.94815737, 0, 0, 0)
+environment = ExtResource("6_3y2rt")
+
+[node name="other" type="CanvasLayer" parent="." unique_id=2017050540]
+
+[node name="version" type="MarginContainer" parent="other" unique_id=398786352]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -750,24 +776,18 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Label" type="Label" parent="Control/version" unique_id=566181364]
+[node name="Label2" type="Label" parent="other/version" unique_id=1841988820]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 8
 size_flags_vertical = 8
 theme = SubResource("Theme_t0a87")
-text = "OUTREACH 1.2.2"
-script = SubResource("GDScript_xg200")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=2093612364]
-transform = Transform3D(1, 0, 0, 0, 0.94815737, -0.31780115, 0, 0.31780115, 0.94815737, 0, 0, 0)
-
-[node name="WorldEnvironment" parent="." unique_id=2082389152 instance=ExtResource("6_r8yej")]
-
-[node name="sky" parent="." unique_id=726800562 instance=ExtResource("7_3y2rt")]
+theme_override_font_sizes/font_size = 14
+text = "© Кукеманов Даниил | MIT License"
 
 [node name="intro" type="CanvasLayer" parent="." unique_id=1110668770]
 unique_name_in_owner = true
 layer = 100
+visible = false
 
 [node name="black_screen" type="ColorRect" parent="intro" unique_id=1541882014]
 anchors_preset = 15

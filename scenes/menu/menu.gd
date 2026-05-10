@@ -2,7 +2,7 @@ extends Node3D
 
 func _ready() -> void:
 	
-	
+	%intro.visible = true
 	%menu.visible = true
 	%world_create.visible = false
 	%tutorial.visible = false

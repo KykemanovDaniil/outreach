@@ -51,10 +51,12 @@ func show_slide(index: int):
 		counter_label.text = "%d / %d" % [current_idx + 1, all_slides_data.size()]
 
 func next_page():
+	SoundManager.play_2d("click")
 	if current_idx < all_slides_data.size() - 1:
 		# SoundManager.play_2d("click") # Убедись, что SoundManager доступен
 		show_slide(current_idx + 1)
 
 func prev_page():
+	SoundManager.play_2d("click")
 	if current_idx > 0:
 		show_slide(current_idx - 1)
