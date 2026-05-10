@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://dupck2ruambx6"]
 
 [ext_resource type="Script" uid="uid://uk648nryu4k4" path="res://scenes/menu/menu.gd" id="1_037ec"]
-[ext_resource type="Texture2D" uid="uid://75euk8bdqo6v" path="res://assets/textures/outreach_outline.png" id="2_3y2rt"]
 [ext_resource type="Theme" uid="uid://cynbq5s6oqfjd" path="res://assets/common/theme/theme.tres" id="3_r8yej"]
 [ext_resource type="PackedScene" uid="uid://cbsk8qw1tnxly" path="res://scenes/gui/options/options.tscn" id="5_y1o0p"]
 [ext_resource type="Script" uid="uid://bcsn77uqp3urs" path="res://scenes/menu/tutorial/tutorial.gd" id="6_qo0fc"]
 [ext_resource type="PackedScene" uid="uid://bc3b8kr4mkoc4" path="res://assets/common/environment/world_environment.tscn" id="6_r8yej"]
 [ext_resource type="PackedScene" uid="uid://dv1gg4rx7mdbn" path="res://assets/common/environment/clouds/clouds.tscn" id="7_3y2rt"]
+[ext_resource type="AudioStream" uid="uid://dcprx5duwufdc" path="res://assets/audio/sfx/intro_logo.ogg" id="8_qo0fc"]
+[ext_resource type="Texture2D" uid="uid://bohqc1vkn5cx7" path="res://assets/textures/logos.png" id="8_t0a87"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y2rt"]
+atlas = ExtResource("8_t0a87")
+region = Rect2(0, 0, 157, 22)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k48pe"]
 
@@ -24,6 +29,86 @@ func _ready() -> void:
 	# Устанавливаем текст (можно добавить префикс \"v\")
 	text = \"OUTREACH \" + str(version)
 "
+
+[sub_resource type="Animation" id="Animation_3y2rt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("black_screen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t0a87"]
+resource_name = "intro_black_screen_fade_out"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("black_screen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7, 4),
+"transitions": PackedFloat32Array(0.5, 1, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.77, 1.7, 4),
+"transitions": PackedFloat32Array(0, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_qo0fc")
+}],
+"times": PackedFloat32Array(0.3029)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qo0fc"]
+_data = {
+&"RESET": SubResource("Animation_3y2rt"),
+&"intro": SubResource("Animation_t0a87")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qo0fc"]
+atlas = ExtResource("8_t0a87")
+region = Rect2(158, 0, 57, 55)
 
 [node name="menu" type="Node3D" unique_id=1317752888]
 script = ExtResource("1_037ec")
@@ -327,7 +412,7 @@ grow_vertical = 2
 scale = Vector2(0.12, 0.12)
 pivot_offset = Vector2(1950, 279.5)
 size_flags_horizontal = 4
-texture = ExtResource("2_3y2rt")
+texture = SubResource("AtlasTexture_3y2rt")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/menu/MarginContainer/VBoxContainer2" unique_id=1503340520]
 layout_mode = 2
@@ -680,6 +765,44 @@ transform = Transform3D(1, 0, 0, 0, 0.94815737, -0.31780115, 0, 0.31780115, 0.94
 
 [node name="sky" parent="." unique_id=726800562 instance=ExtResource("7_3y2rt")]
 
+[node name="intro" type="CanvasLayer" parent="." unique_id=1110668770]
+unique_name_in_owner = true
+layer = 100
+
+[node name="black_screen" type="ColorRect" parent="intro" unique_id=1541882014]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="intro_animation" type="AnimationPlayer" parent="intro" unique_id=1814534184]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_qo0fc")
+
+[node name="Sprite2D" type="TextureRect" parent="intro" unique_id=1502486781]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -27.5
+offset_right = 28.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+pivot_offset = Vector2(28.5, 27.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_qo0fc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="intro" unique_id=1427981576]
+volume_db = 7.358
+
 [connection signal="text_changed" from="Control/world_create/Panel/MarginContainer/VBoxContainer/HBoxContainer/seed" to="." method="_on_seed_text_changed"]
 [connection signal="item_selected" from="Control/world_create/Panel/MarginContainer/VBoxContainer/HBoxContainer2/world_type_btn" to="." method="_on_world_type_selected"]
 [connection signal="pressed" from="Control/world_create/Panel/MarginContainer/HBoxContainer/Button" to="." method="_on_button_pressed" binds= ["play"]]
@@ -695,3 +818,4 @@ transform = Transform3D(1, 0, 0, 0, 0.94815737, -0.31780115, 0, 0.31780115, 0.94
 [connection signal="pressed" from="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/MarginContainer2/PanelContainer2/MarginContainer/HBoxContainer/Button3" to="Control/tutorial/PanelContainer" method="next_page"]
 [connection signal="pressed" from="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/MarginContainer2/PanelContainer2/MarginContainer2/Button4" to="." method="_on_button_pressed" binds= ["tutorial"]]
 [connection signal="pressed" from="Control/options/options/MarginContainer/Button5" to="." method="_on_button_pressed" binds= ["options"]]
+[connection signal="animation_finished" from="intro/intro_animation" to="." method="_intro_finished"]

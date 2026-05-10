@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l102tp5q63h6"
-path="res://.godot/imported/outreach.png-54fc18db596350e5343785bc3c75aaa0.ctex"
+uid="uid://bohqc1vkn5cx7"
+path="res://.godot/imported/logos.png-0d25597510a525dca8facb327424bee8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/outreach.png"
-dest_files=["res://.godot/imported/outreach.png-54fc18db596350e5343785bc3c75aaa0.ctex"]
+source_file="res://assets/textures/logos.png"
+dest_files=["res://.godot/imported/logos.png-0d25597510a525dca8facb327424bee8.ctex"]
 
 [params]
 

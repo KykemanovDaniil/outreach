@@ -1,7 +1,8 @@
 extends Node3D
 
 func _ready() -> void:
-	SoundManager.play_random_music()
+	
+	
 	%menu.visible = true
 	%world_create.visible = false
 	%tutorial.visible = false
@@ -11,8 +12,9 @@ func _ready() -> void:
 	%seed.text = str(randi())
 	GlobalValues.world_type = str("basic")
 	
-	await get_tree().create_timer(1.5).timeout
-	SoundManager.play_random_music()
+	await get_tree().create_timer(2.4).timeout
+	%intro_animation.play("intro")
+	%intro_animation.advance(0)
 
 func _on_seed_text_changed(new_text: String) -> void:
 	var old_caret: int = %seed.caret_column  # Добавили : int
@@ -83,3 +85,8 @@ func _on_button_pressed(action: String) -> void:
 
 func _on_button_4_pressed(extra_arg_0: String) -> void:
 	pass # Replace with function body.
+
+
+func _intro_finished(anim_name: StringName) -> void:
+	%intro.queue_free()
+	SoundManager.play_random_music()
