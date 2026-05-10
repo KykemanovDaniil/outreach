@@ -755,7 +755,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme = SubResource("Theme_t0a87")
-text = "OUTREACH 1.2.1"
+text = "OUTREACH 1.2.2"
 script = SubResource("GDScript_xg200")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2093612364]

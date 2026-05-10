@@ -10,5 +10,5 @@ shader_parameter/dither_strength = 0.2010000095475
 shader_parameter/distortion = 0.0
 shader_parameter/aberration = 0.0010000000475
 shader_parameter/grain_strength = 0.04
-shader_parameter/vignette_intensity = 1.8450000876375001
+shader_parameter/vignette_intensity = 1.8450000876375
 shader_parameter/scanline_intensity = 0.0050000002375

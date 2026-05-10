@@ -89,4 +89,5 @@ func _on_button_4_pressed(extra_arg_0: String) -> void:
 
 func _intro_finished(anim_name: StringName) -> void:
 	%intro.queue_free()
+	await get_tree().create_timer(1.4).timeout
 	SoundManager.play_random_music()

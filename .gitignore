@@ -1,7 +1,7 @@
 # trash
 .godot/
 .import/
-addons/
+zylann.voxel/
 
 # conf export
 export.cfg

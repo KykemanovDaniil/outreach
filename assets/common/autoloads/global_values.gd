@@ -30,8 +30,8 @@ var min_fov : int = 1
 # V-Sync
 var v_sync : bool = SaveSystem.get_val("Graphics", "v_sync", true)
 
-var music_volume : float = 1.0#SaveSystem.get_val("Graphics", "music_volume", 1.0)
-var sfx_volume : float = 1.0#SaveSystem.get_val("Graphics", "sfx_volume", 1.0)
+var music_volume : float = SaveSystem.get_val("Audio", "music_volume", 1.0)
+var sfx_volume : float = SaveSystem.get_val("Audio", "sfx_volume", 1.0)
 
 func _ready() -> void:
 	# Применяем V-Sync сразу при запуске игры
