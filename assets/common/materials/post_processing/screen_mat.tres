@@ -6,7 +6,7 @@
 shader = ExtResource("1_g11jm")
 shader_parameter/pixel_size = 1
 shader_parameter/color_levels = 4.674000127015
-shader_parameter/dither_strength = 0.2010000095475
+shader_parameter/dither_strength = 0.2910000138225
 shader_parameter/distortion = 0.0
 shader_parameter/aberration = 0.0010000000475
 shader_parameter/grain_strength = 0.04

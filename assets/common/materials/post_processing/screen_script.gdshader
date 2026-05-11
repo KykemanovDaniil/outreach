@@ -4,7 +4,7 @@ shader_type canvas_item;
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
 group_uniforms Retro_Settings;
-uniform int pixel_size : hint_range(1, 10) = 4;        // Размер пикселя
+uniform int pixel_size : hint_range(0, 10) = 4;        // Размер пикселя
 uniform float color_levels : hint_range(2.0, 32.0) = 8.0; // Глубина цвета
 uniform float dither_strength : hint_range(0.0, 1.0) = 0.1; // Сила дизеринга
 
