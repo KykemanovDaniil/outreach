@@ -1,6 +1,5 @@
 extends Node
 
-# Оставил твои оригинальные названия переменных и путей
 @onready var env_scene: PackedScene = preload("res://assets/common/environment/world_environment.tscn")
 @onready var dir_light_scene: PackedScene = preload("res://assets/common/environment/directoinal_light_3d/directional_light_3d.tscn")
 @onready var clouds : PackedScene = preload("res://assets/common/environment/clouds/clouds.tscn")
@@ -8,16 +7,12 @@ extends Node
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	# Экономим ресурсы CPU на твоем AMD E2 в меню
+	
 	PhysicsServer3D.set_active(false)
 	PhysicsServer2D.set_active(false)
 	create()
 
 func create() -> void:  
-	var scene_path := ""
-	if get_tree().current_scene:
-		scene_path = get_tree().current_scene.scene_file_path
-	
 	refresh_world()
 
 # Вспомогательная функция для очистки игровых нод в меню
@@ -51,12 +46,12 @@ func _setup_render_distance() -> void:
 	var terrain_nodes := get_tree().get_nodes_in_group("terrain")
 	for t in terrain_nodes:
 		if "max_view_distance" in t:
-			t.max_view_distance = GlobalValues.render_distance * 32
+			t.max_view_distance = GlobalValues.render_distance * GlobalValues.chunk_size
 			
 	var viewers := get_tree().get_nodes_in_group("visual_block")
 	for viewer in viewers:
 		if is_instance_valid(viewer) and "view_distance" in viewer:
-			viewer.view_distance = GlobalValues.render_distance * 32
+			viewer.view_distance = GlobalValues.render_distance * GlobalValues.chunk_size
 
 func _setup_clouds() -> void:
 	var scene_path := ""
@@ -97,8 +92,8 @@ func _setup_environment() -> void:
 			var res = env_instance.environment
 			res.glow_enabled = GlobalValues.glow
 			res.fog_enabled = GlobalValues.fog
-			res.fog_depth_end = GlobalValues.render_distance * 32
-			res.fog_depth_begin = (GlobalValues.render_distance * 32) / 4
+			res.fog_depth_end = GlobalValues.render_distance * GlobalValues.chunk_size
+			res.fog_depth_begin = (GlobalValues.render_distance * GlobalValues.chunk_size) / GlobalValues.fog_range
 
 func _setup_light() -> void:
 	# Ищем существующий свет по имени, а не по группе, чтобы не спамить

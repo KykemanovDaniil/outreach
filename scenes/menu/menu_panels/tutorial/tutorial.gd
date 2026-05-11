@@ -3,10 +3,10 @@ extends PanelContainer
 # Прописываем пути вручную. Это заставит Godot включить их в EXE.
 # Убедись, что пути ТОЧНО совпадают с твоими файлами в папке res://
 var tutorial_paths : Array[String] = [
-	"res://scenes/menu/tutorial/page_class/page_items/page1.tres",
-	"res://scenes/menu/tutorial/page_class/page_items/page2.tres",
-	"res://scenes/menu/tutorial/page_class/page_items/page3.tres",
-	"res://scenes/menu/tutorial/page_class/page_items/page4.tres"
+	"res://scenes/menu/menu_panels/tutorial/page_class/page_items/page1.tres",
+	"res://scenes/menu/menu_panels/tutorial/page_class/page_items/page2.tres",
+	"res://scenes/menu/menu_panels/tutorial/page_class/page_items/page3.tres",
+	"res://scenes/menu/menu_panels/tutorial/page_class/page_items/page4.tres"
 ]
 
 @onready var slide_texture = %page_texture
@@ -18,6 +18,10 @@ var all_slides_data : Array[Resource] = []
 var current_idx : int = 0
 
 func _ready():
+	
+	var track = preload("res://assets/audio/music/Only_forward.ogg")
+	SoundManager.play_specific_music(track)
+	
 	load_resources_manually()
 	if all_slides_data.size() > 0:
 		show_slide(0)

@@ -8,11 +8,19 @@
 [sub_resource type="Theme" id="Theme_dmt3d"]
 
 [node name="options" type="PanelContainer" unique_id=1548751189]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fftui")
 script = ExtResource("1_dmt3d")
@@ -152,7 +160,7 @@ size_flags_horizontal = 3
 
 [node name="Label4" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer/PanelContainer" unique_id=1839083539]
 layout_mode = 2
-text = "render_distance"
+text = "render distance"
 horizontal_alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer" unique_id=2136043173]
@@ -163,9 +171,34 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_dmt3d")
-min_value = 2.0
+min_value = 1.0
 max_value = 128.0
-value = 2.0
+value = 1.0
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world" unique_id=897893568]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer2" unique_id=671114328]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer2/PanelContainer" unique_id=1111276660]
+layout_mode = 2
+text = "update distance"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer2" unique_id=1267991773]
+layout_mode = 2
+
+[node name="update_distance" type="SpinBox" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer2" unique_id=1719842831]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_dmt3d")
+min_value = 1.0
+max_value = 128.0
+value = 1.0
 alignment = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world" unique_id=1701345066]
@@ -338,6 +371,7 @@ horizontal_alignment = 1
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics/glow_button" to="." method="_on_button_pressed" binds= ["glow"]]
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics/clouds_button" to="." method="_on_button_pressed" binds= ["clouds"]]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer/render_distance" to="." method="_on_render_distance_value_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer2/update_distance" to="." method="_on_update_distance_value_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer3/fov" to="." method="_on_fov_value_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio/HBoxContainer4/music_volume" to="." method="_on_music_value_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/audio/HBoxContainer5/sfx_volume" to="." method="_on_sfx_value_changed"]

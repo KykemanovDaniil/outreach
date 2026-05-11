@@ -35,7 +35,7 @@ func close_last_window():
 		get_tree().paused = false
 		# В МЕНЮ мы не должны прятать мышь! 
 		# Проверь, находимся ли мы в игре, прежде чем делать CAPTURED
-		if get_tree().current_scene.name != "Menu":
+		if get_tree().current_scene.name != "menu":
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

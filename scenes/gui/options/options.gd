@@ -45,19 +45,19 @@ func _on_button_pressed(action: String) -> void:
 	
 	# Сохранение изменений
 	if action in GlobalValues:
-		SaveSystem.set_val("Graphics", action, GlobalValues.get(action))
+		SaveSystem.set_val("options", action, GlobalValues.get(action))
 
 func _on_render_distance_value_changed(value: float) -> void:
 	GlobalValues.render_distance = int(value)
 	if has_node("/root/Debug"): # Проверка на всякий случай
 		Debug._setup_environment() 
 		Debug._setup_render_distance()
-	SaveSystem.set_val("Graphics", "render_distance", GlobalValues.render_distance)
+	SaveSystem.set_val("options", "render_distance", GlobalValues.render_distance)
 
 
 func _on_fov_value_changed(value: float) -> void:
 	GlobalValues.fov = int(value)
-	SaveSystem.set_val("Graphics", "fov", GlobalValues.fov)
+	SaveSystem.set_val("options", "fov", GlobalValues.fov)
 
 
 func _on_music_value_changed(value: float) -> void:
@@ -67,11 +67,18 @@ func _on_music_value_changed(value: float) -> void:
 	# 2. Пинкаем AudioManager, чтобы он обновил громкость прямо сейчас
 	SoundManager.sync_music_volume()
 	
-	SaveSystem.set_val("Audio", "music_volume", GlobalValues.music_volume)
+	SaveSystem.set_val("audio", "music_volume", GlobalValues.music_volume)
 
 func _on_sfx_value_changed(value: float) -> void:
 	# 1. Также переводим в 0.0 - 1.0
 	GlobalValues.sfx_volume = value / 100.0
 	
 	# 2. SFX не нужно синкать, так как play_2d берет значение в момент вызова
-	SaveSystem.set_val("Audio", "sfx_volume", GlobalValues.sfx_volume)
+	SaveSystem.set_val("audio", "sfx_volume", GlobalValues.sfx_volume)
+
+
+func _on_update_distance_value_changed(value: float) -> void:
+	GlobalValues.update_distance = int(value)
+	Debug._setup_environment() 
+	Debug._setup_render_distance()
+	SaveSystem.set_val("options", "update_distance", GlobalValues.update_distance)

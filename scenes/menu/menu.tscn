@@ -1,52 +1,40 @@
 [gd_scene format=3 uid="uid://dupck2ruambx6"]
 
 [ext_resource type="Script" uid="uid://uk648nryu4k4" path="res://scenes/menu/menu.gd" id="1_037ec"]
-[ext_resource type="Theme" uid="uid://cynbq5s6oqfjd" path="res://assets/common/theme/theme.tres" id="3_r8yej"]
-[ext_resource type="PackedScene" uid="uid://cbsk8qw1tnxly" path="res://scenes/gui/options/options.tscn" id="5_y1o0p"]
+[ext_resource type="PackedScene" uid="uid://dq4c4nvi4hgiy" path="res://scenes/menu/menu_panels/sub_menu/sub_menu.tscn" id="2_r8yej"]
+[ext_resource type="PackedScene" uid="uid://qmu6qq3em37s" path="res://scenes/menu/menu_panels/world_create/world_create.tscn" id="3_037ec"]
+[ext_resource type="PackedScene" uid="uid://y8lkijq6h5ud" path="res://scenes/menu/menu_panels/tutorial/tutorial.tscn" id="4_y1o0p"]
+[ext_resource type="PackedScene" uid="uid://c4dnoimjuqrmr" path="res://scenes/menu/menu_panels/sub_options/sub_options.tscn" id="5_t0a87"]
 [ext_resource type="Environment" uid="uid://kv325ybwe5j6" path="res://assets/common/environment/environment.tres" id="6_3y2rt"]
-[ext_resource type="Script" uid="uid://bcsn77uqp3urs" path="res://scenes/menu/tutorial/tutorial.gd" id="6_qo0fc"]
-[ext_resource type="AudioStream" uid="uid://dcprx5duwufdc" path="res://assets/audio/sfx/intro_logo.ogg" id="8_qo0fc"]
-[ext_resource type="Texture2D" uid="uid://bohqc1vkn5cx7" path="res://assets/textures/logos.png" id="8_t0a87"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3y2rt"]
-atlas = ExtResource("8_t0a87")
-region = Rect2(0, 0, 157, 22)
+[ext_resource type="Texture2D" uid="uid://bohqc1vkn5cx7" path="res://assets/textures/logos.png" id="7_qo0fc"]
+[ext_resource type="AudioStream" uid="uid://dcprx5duwufdc" path="res://assets/audio/sfx/intro_logo.ogg" id="8_t0a87"]
 
 [sub_resource type="Theme" id="Theme_t0a87"]
 Label/constants/outline_size = 5
 LinkButton/constants/outline_size = 5
 
-[sub_resource type="GDScript" id="GDScript_xg200"]
-script/source = "@tool extends Label
-
-func _ready() -> void:
-	# Получаем версию из настроек проекта
-	var version : Variant = ProjectSettings.get_setting(\"application/config/version\")
-	
-	# Устанавливаем текст (можно добавить префикс \"v\")
-	text = str(version)
-"
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k48pe"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kaijy"]
+atlas = ExtResource("7_qo0fc")
+region = Rect2(158, 0, 57, 55)
 
 [sub_resource type="Animation" id="Animation_3y2rt"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("black_screen:modulate")
+tracks/0/path = NodePath("ColorRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/path = NodePath("TextureRect:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -57,29 +45,30 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_t0a87"]
-resource_name = "intro_black_screen_fade_out"
+resource_name = "intro"
 length = 4.0
+step = 0.08
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("black_screen:modulate")
+tracks/0/path = NodePath("ColorRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.7, 4),
-"transitions": PackedFloat32Array(0.5, 1, 2),
+"times": PackedFloat32Array(0, 1.4328358, 3.5),
+"transitions": PackedFloat32Array(1, 2, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/path = NodePath("TextureRect:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.77, 1.7, 4),
-"transitions": PackedFloat32Array(0, 0.5, 0.5, 0.5),
+"times": PackedFloat32Array(0, 0.29850745, 1.5671642, 3.5),
+"transitions": PackedFloat32Array(0, 1, 2, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
@@ -93,9 +82,9 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("8_qo0fc")
+"stream": ExtResource("8_t0a87")
 }],
-"times": PackedFloat32Array(0.3029)
+"times": PackedFloat32Array(0.23880595)
 }
 tracks/2/use_blend = true
 
@@ -105,662 +94,17 @@ _data = {
 &"intro": SubResource("Animation_t0a87")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qo0fc"]
-atlas = ExtResource("8_t0a87")
-region = Rect2(158, 0, 57, 55)
-
-[node name="menu" type="Node3D" unique_id=1317752888]
+[node name="menu" type="Node" unique_id=1197723963]
 script = ExtResource("1_037ec")
-
-[node name="Control" type="CanvasLayer" parent="." unique_id=619337561]
-
-[node name="world_create" type="Control" parent="Control" unique_id=1170372088]
-unique_name_in_owner = true
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Panel" type="Panel" parent="Control/world_create" unique_id=1727213695]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -175.0
-offset_right = 250.0
-offset_bottom = 175.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/world_create/Panel" unique_id=944676704]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/world_create/Panel/MarginContainer" unique_id=1992846211]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/world_create/Panel/MarginContainer/VBoxContainer" unique_id=741548689]
-layout_mode = 2
-
-[node name="PanelContainer2" type="PanelContainer" parent="Control/world_create/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=571282780]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="Control/world_create/Panel/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2" unique_id=371084680]
-layout_mode = 2
-size_flags_horizontal = 6
-text = "seed"
-
-[node name="VSeparator" type="VSeparator" parent="Control/world_create/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=333164979]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 0
-
-[node name="seed" type="LineEdit" parent="Control/world_create/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1452186743]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-placeholder_text = "seed"
-alignment = 1
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/world_create/Panel/MarginContainer/VBoxContainer" unique_id=812181016]
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="Control/world_create/Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=850791697]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="Control/world_create/Panel/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer" unique_id=1596089245]
-layout_mode = 2
-size_flags_horizontal = 6
-text = "world type"
-
-[node name="VSeparator" type="VSeparator" parent="Control/world_create/Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=424296652]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="world_type_btn" type="OptionButton" parent="Control/world_create/Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=648711796]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-selected = 0
-item_count = 5
-popup/item_0/text = "basic"
-popup/item_0/id = 0
-popup/item_1/text = "flat"
-popup/item_1/id = 1
-popup/item_2/text = "sky_blocks"
-popup/item_2/id = 2
-popup/item_3/text = "basic_plus"
-popup/item_3/id = 3
-popup/item_4/text = "debug_world"
-popup/item_4/id = 4
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/world_create/Panel/MarginContainer" unique_id=316063690]
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_constants/separation = 10
-
-[node name="Button" type="Button" parent="Control/world_create/Panel/MarginContainer/HBoxContainer" unique_id=1485016035]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 8
-text = "CREATE"
-
-[node name="MarginContainer2" type="MarginContainer" parent="Control/world_create/Panel" unique_id=1399850336]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/margin_bottom = -30
-
-[node name="Button4" type="Button" parent="Control/world_create/Panel/MarginContainer2" unique_id=822856020]
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-text = "BACK"
-
-[node name="MarginContainer3" type="MarginContainer" parent="Control/world_create/Panel" unique_id=1470263399]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/margin_top = -50
-
-[node name="PanelContainer2" type="PanelContainer" parent="Control/world_create/Panel/MarginContainer3" unique_id=873993073]
-modulate = Color(1, 0.8901961, 0.40784314, 1)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/world_create/Panel/MarginContainer3/PanelContainer2" unique_id=597818893]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="Label" type="Label" parent="Control/world_create/Panel/MarginContainer3/PanelContainer2/MarginContainer" unique_id=1652604682]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 20
-text = "CREATE WORLD"
-horizontal_alignment = 1
-
-[node name="worlds" type="Control" parent="Control" unique_id=492911864]
-unique_name_in_owner = true
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="Control/worlds" unique_id=1824457226]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -306.5
-offset_top = -164.0
-offset_right = 306.5
-offset_bottom = 164.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/worlds/Panel" unique_id=621356074]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_top = -54
-theme_override_constants/margin_bottom = -59
-
-[node name="PanelContainer" type="PanelContainer" parent="Control/worlds/Panel/MarginContainer" unique_id=1081572406]
-modulate = Color(1, 0.8901961, 0.40784314, 1)
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/worlds/Panel/MarginContainer/PanelContainer" unique_id=602322876]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="Label" type="Label" parent="Control/worlds/Panel/MarginContainer/PanelContainer/MarginContainer" unique_id=1870256369]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "worlds"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="PanelContainer2" type="PanelContainer" parent="Control/worlds/Panel/MarginContainer" unique_id=56148007]
-layout_mode = 2
-size_flags_vertical = 8
-mouse_filter = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/worlds/Panel/MarginContainer/PanelContainer2" unique_id=702834701]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/worlds/Panel/MarginContainer/PanelContainer2/MarginContainer" unique_id=1433635259]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/separation = 10
-
-[node name="Button3" type="Button" parent="Control/worlds/Panel/MarginContainer/PanelContainer2/MarginContainer/HBoxContainer" unique_id=2132852661]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "CREATE WORLD"
-
-[node name="MarginContainer2" type="MarginContainer" parent="Control/worlds/Panel/MarginContainer/PanelContainer2" unique_id=853761694]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_top = 44
-theme_override_constants/margin_bottom = -30
-
-[node name="Button4" type="Button" parent="Control/worlds/Panel/MarginContainer/PanelContainer2/MarginContainer2" unique_id=1033322913]
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-text = "BACK"
-
-[node name="menu" type="Control" parent="Control" unique_id=140237507]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/menu" unique_id=2054763584]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Control/menu/MarginContainer" unique_id=449234948]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Control" type="Control" parent="Control/menu/MarginContainer/VBoxContainer2" unique_id=13622860]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Control/menu/MarginContainer/VBoxContainer2/Control" unique_id=425416216]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1950.0
-offset_top = -351.0
-offset_right = 1950.0
-offset_bottom = 208.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.12, 0.12)
-pivot_offset = Vector2(1950, 279.5)
-size_flags_horizontal = 4
-texture = SubResource("AtlasTexture_3y2rt")
-
-[node name="Label" type="Label" parent="Control/menu/MarginContainer/VBoxContainer2/Control/TextureRect" unique_id=566181364]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -492.5
-offset_top = 38.0
-offset_right = 492.5
-offset_bottom = 235.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme = SubResource("Theme_t0a87")
-theme_override_constants/outline_size = 83
-theme_override_font_sizes/font_size = 197
-text = "1.2.2"
-script = SubResource("GDScript_xg200")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/menu/MarginContainer/VBoxContainer2" unique_id=1503340520]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 10
-
-[node name="PanelContainer" type="PanelContainer" parent="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1209195237]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("3_r8yej")
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer/PanelContainer" unique_id=1414223151]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer" unique_id=1709123439]
-custom_minimum_size = Vector2(350, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 10
-
-[node name="Button" type="Button" parent="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1187406956]
-layout_mode = 2
-theme = ExtResource("3_r8yej")
-text = "WORLDS"
-
-[node name="Button4" type="Button" parent="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=345268764]
-layout_mode = 2
-text = "TUTORIAL"
-
-[node name="Button5" type="Button" parent="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=200330730]
-layout_mode = 2
-text = "OPTIONS"
-
-[node name="PanelContainer2" type="PanelContainer" parent="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=951975655]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer/PanelContainer2" unique_id=329371325]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer/PanelContainer2/MarginContainer" unique_id=290818009]
-custom_minimum_size = Vector2(350, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 10
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer" unique_id=1571077447]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="Button2" type="Button" parent="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=611036927]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "CREDITS"
-
-[node name="VSeparator" type="VSeparator" parent="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=438858988]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Button3" type="Button" parent="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1623448445]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "EXIT"
-
-[node name="tutorial" type="Control" parent="Control" unique_id=1784830407]
-unique_name_in_owner = true
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="Control/tutorial" unique_id=164683322]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -255.0
-offset_top = -191.0
-offset_right = 255.0
-offset_bottom = 191.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_k48pe")
-script = ExtResource("6_qo0fc")
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/tutorial/PanelContainer" unique_id=36026938]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="PanelContainer" type="PanelContainer" parent="Control/tutorial/PanelContainer/MarginContainer" unique_id=827981087]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer" unique_id=1782683556]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="PanelContainer" type="PanelContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/VBoxContainer" unique_id=1964036411]
-visible = false
-custom_minimum_size = Vector2(450, 0)
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer" unique_id=1125269301]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="page_texture" type="TextureRect" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=977572978]
-unique_name_in_owner = true
-clip_contents = true
-custom_minimum_size = Vector2(0, 250)
-layout_mode = 2
-size_flags_vertical = 0
-expand_mode = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/VBoxContainer" unique_id=506971131]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="PanelContainer2" type="PanelContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/MarginContainer" unique_id=1397646671]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2" unique_id=777917344]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer" unique_id=1017595860]
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/VBoxContainer" unique_id=1856015032]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/VBoxContainer/PanelContainer" unique_id=781691276]
-modulate = Color(1, 0.9529412, 0.7411765, 1)
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="page_name" type="Label" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=1869552656]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-text = "TEST TEXT"
-uppercase = true
-
-[node name="HSeparator" type="HSeparator" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/VBoxContainer" unique_id=841920782]
-layout_mode = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/VBoxContainer" unique_id=869185323]
-layout_mode = 2
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 3
-
-[node name="page_text" type="Label" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1019344188]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 14
-text = "test text test text test text test text test text test text test text test text test text test text test text test text test text test text "
-autowrap_mode = 3
-
-[node name="MarginContainer2" type="MarginContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer" unique_id=591492269]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_top = -50
-theme_override_constants/margin_bottom = -55
-
-[node name="PanelContainer" type="PanelContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/MarginContainer2" unique_id=1900708946]
-modulate = Color(1, 0.8901961, 0.40784314, 1)
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/MarginContainer2/PanelContainer" unique_id=350671198]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="Label" type="Label" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/MarginContainer2/PanelContainer/MarginContainer" unique_id=291456181]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "tutorial"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="PanelContainer2" type="PanelContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/MarginContainer2" unique_id=106931048]
-layout_mode = 2
-size_flags_vertical = 8
-mouse_filter = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/MarginContainer2/PanelContainer2" unique_id=1976594964]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/MarginContainer2/PanelContainer2/MarginContainer" unique_id=1827101317]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/separation = 10
-
-[node name="Button" type="Button" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/MarginContainer2/PanelContainer2/MarginContainer/HBoxContainer" unique_id=176649613]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "PREVIOUS"
-
-[node name="Button3" type="Button" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/MarginContainer2/PanelContainer2/MarginContainer/HBoxContainer" unique_id=547369978]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "NEXT"
-
-[node name="MarginContainer2" type="MarginContainer" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/MarginContainer2/PanelContainer2" unique_id=671154582]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_top = 44
-theme_override_constants/margin_bottom = -30
-
-[node name="Button4" type="Button" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/MarginContainer2/PanelContainer2/MarginContainer2" unique_id=502283032]
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-text = "BACK"
-
-[node name="page_counter" type="Label" parent="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/MarginContainer2/PanelContainer2/MarginContainer2" unique_id=1195386456]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 1
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 18
-text = "1/1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="options" type="Control" parent="Control" unique_id=867945131]
-unique_name_in_owner = true
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="options" parent="Control/options" unique_id=1548751189 instance=ExtResource("5_y1o0p")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -310.0
-offset_top = -210.0
-offset_right = 310.0
-offset_bottom = 210.0
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/options/options" unique_id=2054727076]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_bottom = -25
-
-[node name="Button5" type="Button" parent="Control/options/options/MarginContainer" unique_id=1445813285]
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-text = "BACK"
+sub_menu = ExtResource("2_r8yej")
+world_create = ExtResource("3_037ec")
+tutorial = ExtResource("4_y1o0p")
+sub_options = ExtResource("5_t0a87")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2093612364]
 transform = Transform3D(1, 0, 0, 0, 0.94815737, -0.31780115, 0, 0.31780115, 0.94815737, 0, 0, 0)
 environment = ExtResource("6_3y2rt")
+current = true
 
 [node name="other" type="CanvasLayer" parent="." unique_id=2017050540]
 
@@ -784,24 +128,25 @@ theme = SubResource("Theme_t0a87")
 theme_override_font_sizes/font_size = 14
 text = "© Кукеманов Даниил | MIT License"
 
-[node name="intro" type="CanvasLayer" parent="." unique_id=1110668770]
+[node name="intro" type="CanvasLayer" parent="." unique_id=1891489493]
 unique_name_in_owner = true
-layer = 100
-visible = false
+layer = 999
 
-[node name="black_screen" type="ColorRect" parent="intro" unique_id=1541882014]
+[node name="ColorRect" type="ColorRect" parent="intro" unique_id=1622800872]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 
-[node name="intro_animation" type="AnimationPlayer" parent="intro" unique_id=1814534184]
-unique_name_in_owner = true
-libraries/ = SubResource("AnimationLibrary_qo0fc")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="intro" unique_id=512431748]
+volume_db = 5.699
 
-[node name="Sprite2D" type="TextureRect" parent="intro" unique_id=1502486781]
+[node name="TextureRect" type="TextureRect" parent="intro" unique_id=924176042]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
@@ -814,28 +159,15 @@ offset_right = 28.5
 offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(5, 5)
+scale = Vector2(6.82, 6.82)
 pivot_offset = Vector2(28.5, 27.5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("AtlasTexture_qo0fc")
+texture = SubResource("AtlasTexture_kaijy")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="intro" unique_id=1427981576]
-volume_db = 7.358
+[node name="AnimationPlayer" type="AnimationPlayer" parent="intro" unique_id=2124478692]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_qo0fc")
 
-[connection signal="text_changed" from="Control/world_create/Panel/MarginContainer/VBoxContainer/HBoxContainer/seed" to="." method="_on_seed_text_changed"]
-[connection signal="item_selected" from="Control/world_create/Panel/MarginContainer/VBoxContainer/HBoxContainer2/world_type_btn" to="." method="_on_world_type_selected"]
-[connection signal="pressed" from="Control/world_create/Panel/MarginContainer/HBoxContainer/Button" to="." method="_on_button_pressed" binds= ["play"]]
-[connection signal="pressed" from="Control/world_create/Panel/MarginContainer2/Button4" to="." method="_on_button_pressed" binds= ["create"]]
-[connection signal="pressed" from="Control/worlds/Panel/MarginContainer/PanelContainer2/MarginContainer/HBoxContainer/Button3" to="." method="_on_button_pressed" binds= ["create"]]
-[connection signal="pressed" from="Control/worlds/Panel/MarginContainer/PanelContainer2/MarginContainer2/Button4" to="." method="_on_button_pressed" binds= ["worlds"]]
-[connection signal="pressed" from="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed" binds= ["worlds"]]
-[connection signal="pressed" from="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Button4" to="." method="_on_button_pressed" binds= ["tutorial"]]
-[connection signal="pressed" from="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Button5" to="." method="_on_button_pressed" binds= ["options"]]
-[connection signal="pressed" from="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_pressed" binds= ["exit"]]
-[connection signal="pressed" from="Control/menu/MarginContainer/VBoxContainer2/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/Button3" to="." method="_on_button_pressed" binds= ["exit"]]
-[connection signal="pressed" from="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/MarginContainer2/PanelContainer2/MarginContainer/HBoxContainer/Button" to="Control/tutorial/PanelContainer" method="prev_page"]
-[connection signal="pressed" from="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/MarginContainer2/PanelContainer2/MarginContainer/HBoxContainer/Button3" to="Control/tutorial/PanelContainer" method="next_page"]
-[connection signal="pressed" from="Control/tutorial/PanelContainer/MarginContainer/PanelContainer/MarginContainer2/PanelContainer2/MarginContainer2/Button4" to="." method="_on_button_pressed" binds= ["tutorial"]]
-[connection signal="pressed" from="Control/options/options/MarginContainer/Button5" to="." method="_on_button_pressed" binds= ["options"]]
-[connection signal="animation_finished" from="intro/intro_animation" to="." method="_intro_finished"]
+[connection signal="animation_finished" from="intro/AnimationPlayer" to="." method="_intro_finished"]
+[connection signal="current_animation_changed" from="intro/AnimationPlayer" to="." method="_intro_start"]

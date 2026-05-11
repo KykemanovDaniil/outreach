@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PageData" format=3 uid="uid://c8tdekwqcc5ae"]
 
-[ext_resource type="Script" uid="uid://bvymcx0bbfpbj" path="res://scenes/menu/tutorial/page_class/page.gd" id="2_htfdn"]
+[ext_resource type="Script" uid="uid://bvymcx0bbfpbj" path="res://scenes/menu/menu_panels/tutorial/page_class/page.gd" id="2_htfdn"]
 
 [resource]
 script = ExtResource("2_htfdn")

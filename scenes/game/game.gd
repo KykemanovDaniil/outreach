@@ -4,6 +4,7 @@ extends Node3D
 const random_ticks = preload("res://assets/common/voxel_terrain/random_ticks/random_ticks.gd")
 
 func _ready() -> void:
+	WindowManager.close_all_windows()
 	SoundManager.play_random_music()
 	
 	# 1. Запускаем создание мира
