@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://kdeg6wmirrn0"]
 
+[ext_resource type="Environment" uid="uid://kv325ybwe5j6" path="res://assets/common/environment/environment.tres" id="1_p47bc"]
 [ext_resource type="Script" uid="uid://dbtixdpj8tqp6" path="res://scenes/player/player.gd" id="1_wg42c"]
 [ext_resource type="PackedScene" uid="uid://beoh00kqb84gq" path="res://scenes/gui/inventory/inventory.tscn" id="2_ratu8"]
 [ext_resource type="PackedScene" uid="uid://cbsk8qw1tnxly" path="res://scenes/gui/options/options.tscn" id="3_xo733"]
@@ -7,6 +8,7 @@
 
 [node name="player" type="Camera3D" unique_id=1259636340 groups=["player"]]
 process_mode = 3
+environment = ExtResource("1_p47bc")
 far = 999999.0
 script = ExtResource("1_wg42c")
 inventory_scene = ExtResource("2_ratu8")

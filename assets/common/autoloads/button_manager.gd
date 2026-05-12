@@ -19,6 +19,7 @@ const KEY_MAP = {
 var touches : Dictionary = {}
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	# Чтобы кнопки не перехватывали фокус и не мешали друг другу
 	for btn in get_tree().get_nodes_in_group("touch_buttons"):
 		btn.focus_mode = Control.FOCUS_NONE
@@ -67,7 +68,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _send_input(btn_name: String, pressed: bool) -> void:
-	var code : Dictionary = KEY_MAP[btn_name]
+	var code : int = KEY_MAP[btn_name]
 	
 	# Если это кнопки мыши
 	if btn_name == "Right_click" or btn_name == "Left_click":

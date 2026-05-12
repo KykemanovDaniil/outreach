@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://d10njads3bx01" path="res://scenes/game/game.gd" id="1_7h61r"]
 [ext_resource type="PackedScene" uid="uid://kdeg6wmirrn0" path="res://scenes/player/player.tscn" id="2_7h61r"]
 [ext_resource type="PackedScene" uid="uid://c015w8i1ydl8f" path="res://assets/common/voxel_terrain/voxel_terrain.tscn" id="3_0sr1o"]
-[ext_resource type="PackedScene" uid="uid://bnk3c463clrwm" path="res://scenes/gui/mobile_interface/mobile_interface.tscn" id="4_kelw5"]
 
 [node name="game" type="Node3D" unique_id=1582613688]
 script = ExtResource("1_7h61r")
@@ -12,5 +11,3 @@ script = ExtResource("1_7h61r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 75, 0)
 
 [node name="VoxelTerrain" parent="." unique_id=1915484782 instance=ExtResource("3_0sr1o")]
-
-[node name="mobile_interface" parent="." unique_id=1086009337 instance=ExtResource("4_kelw5")]

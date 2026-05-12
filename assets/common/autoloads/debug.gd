@@ -17,7 +17,7 @@ func create() -> void:
 
 # Вспомогательная функция для очистки игровых нод в меню
 func _clear_world_nodes():
-	for n in ["clouds", "WorldEnvironment", "dir_light", "PostProcessing"]:
+	for n in ["clouds", "dir_light", "PostProcessing"]:
 		var node = get_node_or_null(n)
 		if node: node.queue_free()
 
@@ -33,7 +33,7 @@ func _setup_post_processing() -> void:
 	
 	# Допустим, в GlobalValues у тебя есть переменная dither_enabled
 	# Если такой нет, можно просто проверять GlobalValues.environment
-	if not GlobalValues.environment: 
+	if not GlobalValues.post_processing: 
 		if pp_instance: pp_instance.queue_free()
 		return
 		

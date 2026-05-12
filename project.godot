@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="OUTREACH"
-config/version="1.2.5"
+config/version="1.2.6"
 run/main_scene="uid://dupck2ruambx6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=129
@@ -29,7 +29,6 @@ Debug="*uid://b2diochwpjlb"
 SoundManager="*uid://dvrtibcoxgkh4"
 WindowManager="*uid://ckdvu7jhhl6kf"
 DebugDraw="*uid://by86urffsm5ab"
-ButtonManager="*uid://bim73s7c4gscr"
 
 [debug]
 

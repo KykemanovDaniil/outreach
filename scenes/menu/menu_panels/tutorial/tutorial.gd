@@ -6,7 +6,8 @@ var tutorial_paths : Array[String] = [
 	"res://scenes/menu/menu_panels/tutorial/page_class/page_items/page1.tres",
 	"res://scenes/menu/menu_panels/tutorial/page_class/page_items/page2.tres",
 	"res://scenes/menu/menu_panels/tutorial/page_class/page_items/page3.tres",
-	"res://scenes/menu/menu_panels/tutorial/page_class/page_items/page4.tres"
+	"res://scenes/menu/menu_panels/tutorial/page_class/page_items/page4.tres",
+	"res://scenes/menu/menu_panels/tutorial/page_class/page_items/page5.tres"
 ]
 
 @onready var slide_texture = %page_texture

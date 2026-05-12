@@ -18,6 +18,7 @@ var _tall_grass_type : int
 var _grass_neighbors: Array[Vector3i] = []
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		_player_node = players[0]

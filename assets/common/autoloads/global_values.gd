@@ -15,7 +15,7 @@ var chunk_volume = pow(chunk_size, 3)
 
 var fog_range : int = SaveSystem.get_val("options", "fog_range", 4)
 
-var random_tick_speed: int = 3
+var random_tick_speed: int = 6
 
 var render_distance : int = SaveSystem.get_val("options", "render_distance", 4)
 var update_distance : int = SaveSystem.get_val("options", "update_distance", 2)
@@ -24,8 +24,9 @@ var clouds : bool = SaveSystem.get_val("options", "clouds", true)
 var shadows : bool = false
 var fog : bool = true
 var glow : bool = SaveSystem.get_val("options", "glow", false)
-var environment : bool = true
+var post_processing : bool = SaveSystem.get_val("options", "post_processing", true)
 var direction_light : bool = false
+var environment : bool = true
 
 # Геймплейные переменные
 var current_block : int = 1 # Лучше поставить 1 (камень/земля), чтобы не ставить "воздух" (0)

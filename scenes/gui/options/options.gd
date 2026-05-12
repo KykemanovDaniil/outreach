@@ -20,6 +20,8 @@ func sync_ui_with_values():
 	
 	if "render_distance" in GlobalValues:
 		%render_distance.value = GlobalValues.render_distance
+	if "update_distance" in GlobalValues:
+		%update_distance.value = GlobalValues.update_distance
 	if "fov" in GlobalValues:
 		%fov.value = GlobalValues.fov
 	if "music_volume" in GlobalValues:

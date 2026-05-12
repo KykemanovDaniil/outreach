@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PageData" format=3 uid="uid://bfxgd7ntmyp11"]
+
+[ext_resource type="Script" uid="uid://bvymcx0bbfpbj" path="res://scenes/menu/menu_panels/tutorial/page_class/page.gd" id="1_bpad3"]
+
+[resource]
+script = ExtResource("1_bpad3")
+PAGE_NAME = "Ticks"
+PAGE_DESCRIPTION = "Random Ticks:
+A dynamic system that breathes life into the infinite world of Outreach. It handles real-time simulation of random events within a specific radius of the player, making the environment feel reactive and evolving.
+
+Performance-Driven Simulation:
+To maintain the game's high performance, the system only processes a specific number of random voxels per frame within the player's vicinity. This ensures a living world without compromising generation speed or stability."
+metadata/_custom_type_script = "uid://bvymcx0bbfpbj"
