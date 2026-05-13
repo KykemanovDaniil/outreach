@@ -1,0 +1,8 @@
+[gd_resource type="VoxelGeneratorScript" format=3 uid="uid://t0p55o7y6u0t"]
+
+[ext_resource type="VoxelBlockyLibrary" uid="uid://g122wix0eknq" path="res://assets/models/blocks.tres" id="1_h4rm4"]
+[ext_resource type="Script" uid="uid://0fqbeo1hxfss" path="res://assets/common/generation/debug_world/debug_world.gd" id="2_1cg3y"]
+
+[resource]
+script = ExtResource("2_1cg3y")
+block_lib = ExtResource("1_h4rm4")

@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://dupck2ruambx6"]
+
+[ext_resource type="Script" uid="uid://uk648nryu4k4" path="res://scenes/menu/menu.gd" id="1_037ec"]
+[ext_resource type="PackedScene" uid="uid://dq4c4nvi4hgiy" path="res://scenes/menu/menu_panels/sub_menu/sub_menu.tscn" id="2_r8yej"]
+[ext_resource type="PackedScene" uid="uid://qmu6qq3em37s" path="res://scenes/menu/menu_panels/world_create/world_create.tscn" id="3_037ec"]
+[ext_resource type="PackedScene" uid="uid://y8lkijq6h5ud" path="res://scenes/menu/menu_panels/tutorial/tutorial.tscn" id="4_y1o0p"]
+[ext_resource type="PackedScene" uid="uid://c4dnoimjuqrmr" path="res://scenes/menu/menu_panels/sub_options/sub_options.tscn" id="5_t0a87"]
+[ext_resource type="Environment" uid="uid://kv325ybwe5j6" path="res://assets/common/environment/environment.tres" id="6_3y2rt"]
+[ext_resource type="Texture2D" uid="uid://bohqc1vkn5cx7" path="res://assets/textures/logos.png" id="7_qo0fc"]
+[ext_resource type="AudioStream" uid="uid://dcprx5duwufdc" path="res://assets/audio/sfx/intro_logo.ogg" id="8_t0a87"]
+
+[sub_resource type="Theme" id="Theme_t0a87"]
+Label/constants/outline_size = 5
+LinkButton/constants/outline_size = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kaijy"]
+atlas = ExtResource("7_qo0fc")
+region = Rect2(158, 0, 57, 55)
+
+[sub_resource type="Animation" id="Animation_3y2rt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t0a87"]
+resource_name = "intro"
+length = 3.6045
+step = 0.08
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4328358, 3.5),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.29850745, 1.5671642, 3.5),
+"transitions": PackedFloat32Array(0, 1, 2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_t0a87")
+}],
+"times": PackedFloat32Array(0.23880595)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qo0fc"]
+_data = {
+&"RESET": SubResource("Animation_3y2rt"),
+&"intro": SubResource("Animation_t0a87")
+}
+
+[node name="menu" type="Node" unique_id=1197723963]
+script = ExtResource("1_037ec")
+sub_menu = ExtResource("2_r8yej")
+world_create = ExtResource("3_037ec")
+tutorial = ExtResource("4_y1o0p")
+sub_options = ExtResource("5_t0a87")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2093612364]
+transform = Transform3D(1, 0, 0, 0, 0.90031874, -0.43523106, 0, 0.43523106, 0.90031874, 0, 0, 0)
+environment = ExtResource("6_3y2rt")
+projection = 1
+current = true
+size = 2.49
+
+[node name="other" type="CanvasLayer" parent="." unique_id=2017050540]
+
+[node name="version" type="MarginContainer" parent="other" unique_id=398786352]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label2" type="Label" parent="other/version" unique_id=1841988820]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = SubResource("Theme_t0a87")
+theme_override_font_sizes/font_size = 14
+text = "© Кукеманов Даниил | MIT License"
+
+[node name="intro" type="CanvasLayer" parent="." unique_id=1891489493]
+unique_name_in_owner = true
+layer = 999
+
+[node name="ColorRect" type="ColorRect" parent="intro" unique_id=1622800872]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="intro" unique_id=512431748]
+volume_db = 5.699
+
+[node name="TextureRect" type="TextureRect" parent="intro" unique_id=924176042]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -27.5
+offset_right = 28.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.82, 6.82)
+pivot_offset = Vector2(28.5, 27.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_kaijy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="intro" unique_id=2124478692]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_qo0fc")
+
+[connection signal="animation_finished" from="intro/AnimationPlayer" to="." method="_intro_finished"]
+[connection signal="current_animation_changed" from="intro/AnimationPlayer" to="." method="_intro_start"]

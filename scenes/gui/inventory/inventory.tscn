@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://beoh00kqb84gq"]
+
+[ext_resource type="Script" uid="uid://8in71kywmspc" path="res://scenes/gui/inventory/inventory.gd" id="1_orbvr"]
+[ext_resource type="Texture2D" uid="uid://doxc3b2svopsb" path="res://assets/textures/block_atlas.png" id="2_jboyp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3n77"]
+atlas = ExtResource("2_jboyp")
+region = Rect2(48, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jboyp"]
+atlas = ExtResource("2_jboyp")
+region = Rect2(16, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pamen"]
+atlas = ExtResource("2_jboyp")
+region = Rect2(0, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw5wb"]
+atlas = ExtResource("2_jboyp")
+region = Rect2(32, 128, 16, 16)
+
+[node name="inventory" type="PanelContainer" unique_id=638950065]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -371.0
+offset_top = -211.0
+offset_right = 363.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_orbvr")
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=51500669]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = -50
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer2" unique_id=978685452]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/PanelContainer2" unique_id=635311358]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="MarginContainer2/PanelContainer2/MarginContainer" unique_id=1592613563]
+layout_mode = 2
+text = "INVENTORY"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="." unique_id=1792544953]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = -106
+theme_override_constants/margin_top = -2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer3" unique_id=1909163057]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer3/PanelContainer" unique_id=2123148335]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer3/PanelContainer/MarginContainer" unique_id=501366723]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Button4" type="Button" parent="MarginContainer3/PanelContainer/MarginContainer/VBoxContainer2" unique_id=878634699]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("AtlasTexture_i3n77")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button" type="Button" parent="MarginContainer3/PanelContainer/MarginContainer/VBoxContainer2" unique_id=421525013]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("AtlasTexture_jboyp")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button2" type="Button" parent="MarginContainer3/PanelContainer/MarginContainer/VBoxContainer2" unique_id=1696034684]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("AtlasTexture_pamen")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button3" type="Button" parent="MarginContainer3/PanelContainer/MarginContainer/VBoxContainer2" unique_id=701377484]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+focus_mode = 0
+icon = SubResource("AtlasTexture_aw5wb")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1381527491]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=807339949]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/ScrollContainer" unique_id=822688923 groups=["grid_cont"]]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 9
+
+[connection signal="pressed" from="MarginContainer3/PanelContainer/MarginContainer/VBoxContainer2/Button4" to="." method="_on_button_pressed" binds= ["all"]]
+[connection signal="pressed" from="MarginContainer3/PanelContainer/MarginContainer/VBoxContainer2/Button" to="." method="_on_button_pressed" binds= ["nature"]]
+[connection signal="pressed" from="MarginContainer3/PanelContainer/MarginContainer/VBoxContainer2/Button2" to="." method="_on_button_pressed" binds= ["building"]]
+[connection signal="pressed" from="MarginContainer3/PanelContainer/MarginContainer/VBoxContainer2/Button3" to="." method="_on_button_pressed" binds= ["other"]]

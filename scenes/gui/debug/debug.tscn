@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://crobbghfu2pg2"]
+
+[sub_resource type="GDScript" id="GDScript_klwu5"]
+script/source = "extends Label
+
+@onready var player: Node3D = get_tree().get_first_node_in_group(\"player\")
+var timer: float = 0.0
+
+func _process(delta: float) -> void:
+	timer += delta
+	if timer < 0.25: return
+	timer = 0.0
+	
+	# Определяем позицию: если игрок валиден — берем его Vector3i, если нет — пишем текст
+	var pos_text = \"Unknown\"
+	if is_instance_valid(player):
+		pos_text = str(Vector3i(player.position))
+	elif get_tree().get_first_node_in_group(\"player\"): 
+		# На случай если игрок переспавнился, пробуем найти его снова
+		player = get_tree().get_first_node_in_group(\"player\")
+
+	# Выводим текст в любом случае
+	text = \"fps: %d\\nposition: %s\\nseed: %s\\nworld type: %s\" % [
+		Engine.get_frames_per_second(),
+		pos_text,
+		GlobalValues.world_seed,
+		GlobalValues.world_type
+	]
+"
+
+[node name="debug" type="MarginContainer" unique_id=565262784]
+offset_right = 21.0
+offset_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="fps" type="Label" parent="." unique_id=1508062432]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 13
+script = SubResource("GDScript_klwu5")

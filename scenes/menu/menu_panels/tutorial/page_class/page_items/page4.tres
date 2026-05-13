@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="PageData" format=3 uid="uid://c1axnplahgugh"]
+
+[ext_resource type="Script" uid="uid://bvymcx0bbfpbj" path="res://scenes/menu/menu_panels/tutorial/page_class/page.gd" id="2_3tjl6"]
+
+[resource]
+script = ExtResource("2_3tjl6")
+PAGE_NAME = "Generations"
+PAGE_DESCRIPTION = "Generation Basics:
+Some generator types may differ in their rules, such as starting height or available biomes. However, they all share one common feature: they are infinite across all three axes. This is exactly why the game is called Outreach. =)
+
+- - - - - - - - - -
+
+Basic:
+The very first and most basic world generation type, featuring natural terrain like caves and trees.
+
+Flat:
+The technical and most optimized world type, which is the fastest to generate and composed of moss.
+
+Sky Blocks:
+An unusual world type that consists of all blocks in the game, arranged on a grid and equally spaced from one another.
+
+Basic Plus:
+A experimental version of the standard generator used to test new features or removals. While its mechanics may vary, it is specifically built for enhanced performance and significantly faster generation speeds.
+
+Debug World:
+A special world type used for testing blocks and their models. It contains every single block in the game, making it the perfect place to check how things look and work."
+metadata/_custom_type_script = "uid://bvymcx0bbfpbj"

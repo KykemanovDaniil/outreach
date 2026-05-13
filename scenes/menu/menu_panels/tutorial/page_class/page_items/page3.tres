@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PageData" format=3 uid="uid://dps00be6uc4y2"]
+
+[ext_resource type="Script" uid="uid://bvymcx0bbfpbj" path="res://scenes/menu/menu_panels/tutorial/page_class/page.gd" id="2_qjw3j"]
+
+[resource]
+script = ExtResource("2_qjw3j")
+PAGE_NAME = "Hotkeys"
+PAGE_DESCRIPTION = "Hotkeys:
+F8 to exit, F11 to toggle window mode,
+E for inventory, Escape for settings,
+F5 to screenshot"
+metadata/_custom_type_script = "uid://bvymcx0bbfpbj"

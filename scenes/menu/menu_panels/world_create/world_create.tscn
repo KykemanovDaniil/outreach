@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://qmu6qq3em37s"]
+
+[ext_resource type="Script" uid="uid://cbyuukv1qtpv1" path="res://scenes/menu/menu_panels/world_create/world_create.gd" id="1_2krl7"]
+
+[node name="world_create" type="CanvasLayer" unique_id=411150282]
+unique_name_in_owner = true
+script = ExtResource("1_2krl7")
+
+[node name="Panel" type="Panel" parent="." unique_id=299028042]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -175.0
+offset_right = 250.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=538559803]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=357271514]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1727084417]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1998942624]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2" unique_id=801883917]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "seed"
+
+[node name="VSeparator" type="VSeparator" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=622028904]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 0
+
+[node name="seed" type="LineEdit" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=521086126]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "seed"
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1422111345]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=351434543]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer" unique_id=1392034940]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "world type"
+
+[node name="VSeparator" type="VSeparator" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1150601268]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="world_type_btn" type="OptionButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2123881507]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 5
+popup/item_0/text = "basic"
+popup/item_0/id = 0
+popup/item_1/text = "flat"
+popup/item_1/id = 1
+popup/item_2/text = "sky_blocks"
+popup/item_2/id = 2
+popup/item_3/text = "basic_plus"
+popup/item_3/id = 3
+popup/item_4/text = "debug_world"
+popup/item_4/id = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer" unique_id=1925756924]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+
+[node name="create" type="Button" parent="Panel/MarginContainer/HBoxContainer" unique_id=981711103]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+text = "CREATE"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel" unique_id=70812135]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_bottom = -30
+
+[node name="back" type="Button" parent="Panel/MarginContainer2" unique_id=61305411 groups=["menu_buttons"]]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "BACK"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Panel" unique_id=1702944968]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_top = -50
+
+[node name="PanelContainer2" type="PanelContainer" parent="Panel/MarginContainer3" unique_id=629489289]
+modulate = Color(1, 0.8901961, 0.40784314, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer3/PanelContainer2" unique_id=1894292518]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="Panel/MarginContainer3/PanelContainer2/MarginContainer" unique_id=729416359]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "CREATE WORLD"
+horizontal_alignment = 1
+
+[connection signal="text_changed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/seed" to="." method="_on_seed_text_changed"]
+[connection signal="item_selected" from="Panel/MarginContainer/VBoxContainer/HBoxContainer2/world_type_btn" to="." method="_on_world_type_selected"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/create" to="." method="create_world"]

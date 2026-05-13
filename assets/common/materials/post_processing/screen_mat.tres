@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dakxo2fwsnuhd"]
+
+[ext_resource type="Shader" uid="uid://b73f7oy607260" path="res://assets/common/materials/post_processing/screen_script.gdshader" id="1_g11jm"]
+
+[resource]
+shader = ExtResource("1_g11jm")
+shader_parameter/pixel_size = 1
+shader_parameter/color_levels = 4.674000127015
+shader_parameter/dither_strength = 0.2910000138225
+shader_parameter/distortion = 0.0
+shader_parameter/aberration = 0.0010000000475
+shader_parameter/grain_strength = 0.04
+shader_parameter/vignette_intensity = 1.8450000876375
+shader_parameter/scanline_intensity = 0.0050000002375

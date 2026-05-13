@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c4dnoimjuqrmr"]
+
+[ext_resource type="Script" uid="uid://t7d7elnqynbd" path="res://scenes/menu/menu_panels/sub_options/sub_options.gd" id="1_ilmeq"]
+[ext_resource type="PackedScene" uid="uid://cbsk8qw1tnxly" path="res://scenes/gui/options/options.tscn" id="1_m0lhx"]
+
+[node name="sub_options" type="CanvasLayer" unique_id=1108364085]
+script = ExtResource("1_ilmeq")
+
+[node name="options" parent="." unique_id=1548751189 instance=ExtResource("1_m0lhx")]
+
+[node name="MarginContainer2" type="MarginContainer" parent="options" unique_id=941592742]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_bottom = -30
+
+[node name="back" type="Button" parent="options/MarginContainer2" unique_id=1576646246 groups=["menu_buttons"]]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "BACK"

@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://pbf5ieaxchai"]
+
+[sub_resource type="Shader" id="Shader_h0r1m"]
+code = "shader_type spatial;
+render_mode unshaded;
+
+uniform sampler2D screen_texture : hint_screen_texture, filter_linear;
+
+void fragment() {
+    // Берем цвет пикселя, который находится ровно за кубом
+    vec3 screen_color = texture(screen_texture, SCREEN_UV).rgb;
+    
+    // Инвертируем его
+    ALBEDO = 1.0 - screen_color;
+}
+"
+
+[resource]
+render_priority = 0
+shader = SubResource("Shader_h0r1m")

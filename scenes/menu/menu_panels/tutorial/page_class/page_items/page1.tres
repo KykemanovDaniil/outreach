@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PageData" format=3 uid="uid://bpvsrluhy5l0t"]
+
+[ext_resource type="Script" uid="uid://bvymcx0bbfpbj" path="res://scenes/menu/menu_panels/tutorial/page_class/page.gd" id="2_m4t2t"]
+
+[resource]
+script = ExtResource("2_m4t2t")
+PAGE_NAME = "Introduction"
+PAGE_DESCRIPTION = "Hello! Thanks for installing the game. Here I will tell you all the basics, hotkeys, etc."
+metadata/_custom_type_script = "uid://bvymcx0bbfpbj"

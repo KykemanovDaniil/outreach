@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c015w8i1ydl8f"]
+
+[ext_resource type="Script" uid="uid://dabanxli1igni" path="res://assets/common/voxel_terrain/voxel_terrain.gd" id="2_elbpt"]
+[ext_resource type="VoxelMesherBlocky" uid="uid://rm1c5peg8mt0" path="res://assets/models/blocks_library.tres" id="2_hx0pk"]
+
+[sub_resource type="VoxelFormat" id="VoxelFormat_elbpt"]
+_data = [0, 0, 0, 0, 0, 1, 0, 0, 0]
+
+[node name="VoxelTerrain" type="VoxelTerrain" unique_id=1915484782 groups=["terrain"]]
+generate_collisions = false
+collision_layer = 0
+collision_mask = 0
+run_stream_in_editor = false
+mesh_block_size = 32
+mesher = ExtResource("2_hx0pk")
+format = SubResource("VoxelFormat_elbpt")
+cast_shadow = 0
+process_mode = 3
+script = ExtResource("2_elbpt")

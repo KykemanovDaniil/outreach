@@ -1,0 +1,18 @@
+# trash
+.godot/
+.import/
+zylann.voxel/
+
+# conf export
+export.cfg
+export_presets.cfg
+
+# build
+*.exe
+*.pck
+*.zip
+*.android
+*.ipa
+
+# other
+/android/

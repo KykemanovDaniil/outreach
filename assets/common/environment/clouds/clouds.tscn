@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dv1gg4rx7mdbn"]
+
+[ext_resource type="Script" uid="uid://c6dlc3jvdmw2e" path="res://assets/common/environment/clouds/clouds.gd" id="1_6pady"]
+[ext_resource type="Material" uid="uid://b0653msc61pmn" path="res://assets/common/materials/clouds/clouds_mat.tres" id="2_xva14"]
+
+[sub_resource type="Curve" id="Curve_euvry"]
+_data = [Vector2(1e-05, 0), 0.0, 0.0, 0, 0, Vector2(0.21323532, 0.8314607), 0.0, 0.0, 0, 0, Vector2(0.56617653, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_08668"]
+curve = SubResource("Curve_euvry")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m136c"]
+lifetime_randomness = 0.06
+emission_shape = 3
+emission_box_extents = Vector3(2500, 50, 2500)
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 0.09999776
+attractor_interaction_enabled = false
+scale_min = 34.28
+scale_max = 80.6
+scale_curve = SubResource("CurveTexture_08668")
+
+[sub_resource type="BoxMesh" id="BoxMesh_euvry"]
+material = ExtResource("2_xva14")
+size = Vector3(1, 0.4, 1)
+
+[node name="clouds" type="Node3D" unique_id=726800562]
+script = ExtResource("1_6pady")
+
+[node name="clouds1" type="GPUParticles3D" parent="." unique_id=1538351096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 250, 0)
+amount = 5500
+lifetime = 25.4
+randomness = 1.0
+visibility_aabb = AABB(-4999.5, 500, -4999.5, 9999, 9999, 9999)
+process_material = SubResource("ParticleProcessMaterial_m136c")
+draw_pass_1 = SubResource("BoxMesh_euvry")
