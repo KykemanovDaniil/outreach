@@ -1,8 +1,8 @@
 # OUTREACH
-A performance-oriented voxel sandbox developed with **Godot Engine**.
+Is a voxel sandbox game heavily focused on creativity, complete building freedom, and deep performance optimization.
 
 ## Overview
-Originally conceived as a high school academic project, **Outreach** has evolved into a full-scale sandbox exploration game. The project underwent three major architectural iterations:
+The project offers an infinite, procedurally generated world with no boundaries for your imagination. Throughout its development, the game successfully went through three major architectural iterations:
 
 1. **Origin:** A 2D side-scroller inspired by *Terraria*.
 2. **Transition:** A 3D liminal space environment after the integration of the *Voxel Tools* plugin (inspired by *Voima* and *The Backrooms*).
