@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://bx7ahqc3yynqm"]
+
+[ext_resource type="Script" uid="uid://bin8p48lh5hm6" path="res://scenes/menu/menu_panels/credits/credits.gd" id="1_3onae"]
+
+[node name="credits" type="CanvasLayer" unique_id=411150282]
+unique_name_in_owner = true
+script = ExtResource("1_3onae")
+
+[node name="Panel" type="Panel" parent="." unique_id=299028042]
+custom_minimum_size = Vector2(638, 460)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -319.0
+offset_top = -230.0
+offset_right = 319.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=538559803]
+custom_minimum_size = Vector2(618, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="Panel" parent="Panel/MarginContainer" unique_id=1022002336]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/PanelContainer" unique_id=1795075365]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/PanelContainer/MarginContainer" unique_id=460396845]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+scroll_hint_mode = 2
+
+[node name="text" type="Label" parent="Panel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer" unique_id=265631934]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel" unique_id=70812135]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_bottom = -30
+
+[node name="back" type="Button" parent="Panel/MarginContainer2" unique_id=61305411 groups=["menu_buttons"]]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "BACK"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Panel" unique_id=1702944968]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_top = -50
+
+[node name="PanelContainer2" type="PanelContainer" parent="Panel/MarginContainer3" unique_id=629489289]
+modulate = Color(1, 0.8901961, 0.40784314, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer3/PanelContainer2" unique_id=1894292518]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="Panel/MarginContainer3/PanelContainer2/MarginContainer" unique_id=729416359]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "CREDITS"
+horizontal_alignment = 1

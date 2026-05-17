@@ -6,7 +6,6 @@
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_0qkq7")
-shader_parameter/cloud_color = Color(0.89411765, 1, 1, 0.61960787)
-shader_parameter/glow_intensity = 1.0
+shader_parameter/cloud_color = Color(1, 1, 1, 0.5568628)
 shader_parameter/fade_distance = 1000.0
 shader_parameter/fade_start = 500.0

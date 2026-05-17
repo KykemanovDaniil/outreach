@@ -4,6 +4,7 @@ extends Node
 @export var world_create : PackedScene
 @export var tutorial : PackedScene
 @export var sub_options : PackedScene
+@export var credits : PackedScene
 
 func _ready() -> void:
 	%AnimationPlayer.play("intro")
@@ -44,6 +45,13 @@ func _on_button_pressed(action: String) -> void:
 		"sub_options":
 			WindowManager.close_last_window()
 			WindowManager.open_window(sub_options)
+			
+			await get_tree().process_frame
+			_connect_menu_buttons()
+		
+		"credits":
+			WindowManager.close_last_window()
+			WindowManager.open_window(credits)
 			
 			await get_tree().process_frame
 			_connect_menu_buttons()

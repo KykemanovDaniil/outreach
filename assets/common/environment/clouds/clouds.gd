@@ -5,5 +5,5 @@ func _process(_delta: float) -> void:
 	if camera:
 		# Плавное следование, чтобы не было рывков шума
 		var target_pos = camera.global_position
-		target_pos.y = 100.0 # Высота облаков
+		target_pos.y = 0.0 # Высота облаков
 		global_position = target_pos

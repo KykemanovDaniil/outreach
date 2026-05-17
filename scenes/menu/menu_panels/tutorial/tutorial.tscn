@@ -110,7 +110,6 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
-vertical_scroll_mode = 3
 
 [node name="page_text" type="Label" parent="PanelContainer/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer2/MarginContainer/VBoxContainer/ScrollContainer" unique_id=322337936]
 unique_name_in_owner = true

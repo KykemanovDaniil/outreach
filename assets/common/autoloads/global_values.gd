@@ -2,6 +2,8 @@ extends Node
 
 var rng : RandomNumberGenerator = RandomNumberGenerator.new()
 
+var version : Variant = "v" + str(ProjectSettings.get_setting("application/config/version")) + " alpha"
+
 var time : float = 12
 
 # Сиды для генерации

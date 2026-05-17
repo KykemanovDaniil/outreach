@@ -1,12 +1,12 @@
 [gd_resource type="Environment" format=3 uid="uid://kv325ybwe5j6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3qncr"]
-sky_top_color = Color(0.57136667, 0.85918295, 0.9943401, 1)
-sky_horizon_color = Color(0.8392157, 0.9411765, 0.9882353, 1)
-sky_curve = 0.15000024
-ground_bottom_color = Color(1, 1, 1, 1)
-ground_horizon_color = Color(0.8392157, 0.9411765, 0.9882353, 1)
-ground_curve = 5.1200066
+sky_top_color = Color(0.40377867, 0.80930245, 0.991164, 1)
+sky_horizon_color = Color(0.7609944, 0.91547185, 0.9825639, 1)
+sky_curve = 0.3446101
+ground_bottom_color = Color(0.7607843, 0.9137255, 0.9843137, 1)
+ground_horizon_color = Color(0.7607843, 0.9137255, 0.9843137, 1)
+ground_curve = 0.28840026
 
 [sub_resource type="Sky" id="Sky_exl83"]
 sky_material = SubResource("ProceduralSkyMaterial_3qncr")
@@ -22,9 +22,8 @@ tonemap_agx_contrast = 1.0
 glow_normalized = true
 fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(0.83927935, 0.9407655, 0.9881771, 1)
+fog_light_color = Color(0.7607843, 0.9137255, 0.9843137, 1)
 fog_density = 1.0
-fog_aerial_perspective = 0.283
 fog_sky_affect = 0.071
 fog_depth_curve = 0.7320431
 fog_depth_begin = 85.3
