@@ -3,7 +3,6 @@ extends PanelContainer
 # Используем Unique Names % для кнопок в сцене
 @onready var buttons = {
 	"clouds": %clouds_button,
-	"glow": %glow_button,
 	"v_sync": %v_sync_button
 }
 
@@ -37,9 +36,6 @@ func _on_button_pressed(action: String) -> void:
 		"clouds":
 			GlobalValues.clouds = !GlobalValues.clouds
 			Debug._setup_clouds()
-		"glow":
-			GlobalValues.glow = !GlobalValues.glow
-			Debug._setup_environment()
 		"v_sync":
 			GlobalValues.v_sync = !GlobalValues.v_sync
 			var mode = DisplayServer.VSYNC_ENABLED if GlobalValues.v_sync else DisplayServer.VSYNC_DISABLED
@@ -51,9 +47,8 @@ func _on_button_pressed(action: String) -> void:
 
 func _on_render_distance_value_changed(value: float) -> void:
 	GlobalValues.render_distance = int(value)
-	if has_node("/root/Debug"): # Проверка на всякий случай
-		Debug._setup_environment() 
-		Debug._setup_render_distance()
+	Debug._setup_environment() 
+	Debug._setup_render_distance()
 	SaveSystem.set_val("options", "render_distance", GlobalValues.render_distance)
 
 
@@ -81,6 +76,4 @@ func _on_sfx_value_changed(value: float) -> void:
 
 func _on_update_distance_value_changed(value: float) -> void:
 	GlobalValues.update_distance = int(value)
-	Debug._setup_environment() 
-	Debug._setup_render_distance()
 	SaveSystem.set_val("options", "update_distance", GlobalValues.update_distance)

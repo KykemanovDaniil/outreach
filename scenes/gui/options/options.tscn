@@ -81,12 +81,6 @@ size_flags_vertical = 0
 text = "GRAPHICS"
 uppercase = true
 
-[node name="glow_button" type="CheckButton" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics" unique_id=2031605093]
-unique_name_in_owner = true
-layout_mode = 2
-focus_mode = 0
-text = "glow"
-
 [node name="clouds_button" type="CheckButton" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics" unique_id=424198247]
 unique_name_in_owner = true
 layout_mode = 2
@@ -369,7 +363,6 @@ theme_override_font_sizes/font_size = 20
 text = "OPTIONS"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics/glow_button" to="." method="_on_button_pressed" binds= ["glow"]]
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/graphics/clouds_button" to="." method="_on_button_pressed" binds= ["clouds"]]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer/render_distance" to="." method="_on_render_distance_value_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/world/HBoxContainer2/update_distance" to="." method="_on_update_distance_value_changed"]

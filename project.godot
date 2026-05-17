@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="OUTREACH"
-config/version="1.2.6"
+config/version="1.2.7"
 run/main_scene="uid://dupck2ruambx6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=129

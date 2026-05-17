@@ -1,15 +1,11 @@
 extends Node
 
 @onready var env_scene: PackedScene = preload("res://assets/common/environment/world_environment.tscn")
-@onready var dir_light_scene: PackedScene = preload("res://assets/common/environment/directoinal_light_3d/directional_light_3d.tscn")
 @onready var clouds : PackedScene = preload("res://assets/common/environment/clouds/clouds.tscn")
 @onready var post_processing : PackedScene = preload("res://assets/common/materials/post_processing/post_processing.tscn")
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	
-	PhysicsServer3D.set_active(false)
-	PhysicsServer2D.set_active(false)
 	create()
 
 func create() -> void:  
@@ -17,7 +13,7 @@ func create() -> void:
 
 # Вспомогательная функция для очистки игровых нод в меню
 func _clear_world_nodes():
-	for n in ["clouds", "dir_light", "PostProcessing"]:
+	for n in ["clouds", "PostProcessing"]:
 		var node = get_node_or_null(n)
 		if node: node.queue_free()
 
@@ -25,7 +21,6 @@ func refresh_world() -> void:
 	_setup_render_distance()
 	_setup_environment()
 	_setup_clouds()
-	_setup_light()
 	_setup_post_processing()
 
 func _setup_post_processing() -> void:
@@ -90,24 +85,6 @@ func _setup_environment() -> void:
 	
 		if env_instance.environment:
 			var res = env_instance.environment
-			res.glow_enabled = GlobalValues.glow
 			res.fog_enabled = GlobalValues.fog
 			res.fog_depth_end = GlobalValues.render_distance * GlobalValues.chunk_size
 			res.fog_depth_begin = (GlobalValues.render_distance * GlobalValues.chunk_size) / GlobalValues.fog_range
-
-func _setup_light() -> void:
-	# Ищем существующий свет по имени, а не по группе, чтобы не спамить
-	var light = get_node_or_null("dir_light")
-	
-	if not GlobalValues.direction_light:
-		if light: light.queue_free()
-		return
-
-	if not light:
-		light = dir_light_scene.instantiate()
-		light.name = "dir_light"
-		light.add_to_group("dir_light")
-		add_child(light)
-	
-	if light is DirectionalLight3D:
-		light.shadow_enabled = GlobalValues.shadows

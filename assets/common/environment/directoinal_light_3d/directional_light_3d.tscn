@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://psa4fuk3enq7"]
-
-[node name="directional_light_3D" type="DirectionalLight3D" unique_id=1964623721]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
-light_energy = 0.838
