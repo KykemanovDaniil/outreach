@@ -30,11 +30,11 @@ The project offers an infinite, procedurally generated world with no boundaries 
 
 ## Credits
 * **Daniil Kykemanov:** Project Lead, Lead Programmer, Composer, Sound Design.
-* **Alyosha mayonnaise 103:** Lead Sprite Artist.
+* **cc19:** Lead Sprite Artist.
 * **Daniil Kykemanov:** Additional Art & Sprites.
 
 ### Special Thanks
-* **Alyosha mayonnaise 103** — For significant contributions to the project's visual direction and development.
+* **cc19** — For significant contributions to the project's visual direction and development.
 
 ## Play the game
 * [Play on Itch.io](https://kykemanov-daniil.itch.io/outreach)
