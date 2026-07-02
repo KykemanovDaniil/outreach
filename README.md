@@ -1,5 +1,5 @@
 # OUTREACH
-Is a voxel sandbox game heavily focused on creativity, complete building freedom, and deep performance optimization.
+Is a voxel sandbox game heavily focused on creativity, complete building freedom.
 
 ## Overview
 The project offers an infinite, procedurally generated world with no boundaries for your imagination. Throughout its development, the game successfully went through three major architectural iterations:
